@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Rémi MARTIN. All rights reserved.
 //
 
-#ifndef src_window_h
-#define src_window_h
+#ifndef window_h
+#define window_h
 
 #include <SDL2/SDL.h>
 
