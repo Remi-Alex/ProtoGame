@@ -4,6 +4,7 @@
 //Using SDL and standard IO
 #include <stdio.h>
 #include "display/window.h"
+#include "model/unit.h"
 
 int main( int argc, char* args[] )
 {
@@ -19,7 +20,7 @@ int main( int argc, char* args[] )
     }
     
     //Free resources and close SDL
-    w.close();
+    //w.close();
     
     return 0;
 }
