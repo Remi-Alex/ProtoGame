@@ -1,7 +1,9 @@
-/*This source code copyrighted by Lazy Foo' Productions (2004-2013)
- and may not be redistributed without written permission.*/
+//
+//  main.cpp
+//  V1 - 24/01/2015
+//
+//  Copyright (c) 2015 Remi&Alex. All rights reserved.
 
-//Using SDL and standard IO
 #include <stdio.h>
 #include "display/window.h"
 #include "model/unit.h"
@@ -9,7 +11,6 @@
 int main( int argc, char* args[] )
 {
     Window w;
-    //Start up SDL and create window
     if( !w.init() )
     {
         printf( "Failed to initialize!\n" );

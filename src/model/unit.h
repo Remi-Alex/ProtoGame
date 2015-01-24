@@ -4,7 +4,7 @@
 //
 //  Copyright (c) 2015 Remi&Alex. All rights reserved.
 //
-// TODO: think about smarter types
+//  TODO: think about smarter types
 
 #ifndef unit__h
 #define unit__h
