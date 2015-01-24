@@ -136,6 +136,12 @@ class Unit {
      *  @param dexterity    the amount of dexterity given to the unit
      */
     Unit(unsigned short strength, unsigned short stamina, unsigned short will, unsigned short intelligence, unsigned short luck, unsigned short dexterity);
+    
+    /**
+     *  Used to attack the ennemi unit given in parameter
+     *  @param ennemi the ennemi unit to attack
+     */
+    void attack(Unit* ennemi);
 };
 
 #endif /* defined(example__h) */

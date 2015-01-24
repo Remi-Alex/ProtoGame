@@ -6,6 +6,8 @@
 //
 
 #include "unit.h"
+#include <stdlib.h>
+#include <time.h>
 
 /**
  *  Comment HARD things
@@ -76,4 +78,22 @@ int Unit::computeDodge() {
 
 int Unit::computeCriticalChance() {
     return this->luck;
+}
+
+void Unit::attack(Unit* ennemi) {
+    // TODO : Make different attacks (physical and magical)
+    int damages = 0, r;
+    
+    // initialize random seed
+    srand(time(NULL));
+    
+    // generate rand number between 0 and 100
+    r = rand() % 100;
+    if(this->precision - ennemi->dodge < r) {
+        damages = this->physicalPower - (100 * this->penetration) * ennemi->armor;
+    }
+    
+    // deal damages
+    ennemi->HP -= damages;
+    if(ennemi->HP < 0) ennemi->HP = 0;
 }
