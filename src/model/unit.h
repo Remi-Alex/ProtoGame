@@ -128,14 +128,15 @@ class Unit {
     
     /**
      *  Constructor with one parameter for each caracteristic
-     *  @param strength
-     *  @param stamina
-     *  @param will
-     *  @param intelligence
-     *  @param luck
-     *  @param dexterity
+     *  @param strength     the amount of strength given to the unit
+     *  @param stamina      the amount of stamina given to the unit
+     *  @param will         the amount of will given to the unit
+     *  @param intelligence the amount of intelligence given to the unit
+     *  @param luck         the amount of luck given to the unit
+     *  @param dexterity    the amount of dexterity given to the unit
      */
     Unit(unsigned short strength, unsigned short stamina, unsigned short will, unsigned short intelligence, unsigned short luck, unsigned short dexterity);
 };
 
 #endif /* defined(example__h) */
+
