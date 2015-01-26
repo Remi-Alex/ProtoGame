@@ -21,7 +21,7 @@ int main( int argc, char* args[] )
     }
     
     //Free resources and close SDL
-    //w.close();
+    w.close();
     
     return 0;
 }
