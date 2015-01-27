@@ -17,7 +17,7 @@ int main( int argc, char* args[] )
 	}
 	else
 	{
-		w.displayImage();
+		w.displayImage("img/hello_world.bmp");
 
 		bool quit = false;
 		SDL_Event e;

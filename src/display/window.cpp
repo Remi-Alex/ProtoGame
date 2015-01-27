@@ -5,6 +5,7 @@
 //  Copyright (c) 2015 Remi&Alex. All rights reserved.
 
 #include "window.h"
+#include <SDL2_image/SDL_image.h>
 
 Window::Window() {
     // Initialize variables
@@ -43,15 +44,13 @@ bool Window::init()
     return success;
 }
 
-bool Window::loadMedia()
+bool Window::loadMedia(char* image)
 {
-    // TODO: Add image choosing
-
     //Loading success flag
     bool success = true;
     
     //Load splash image
-    gHelloWorld = SDL_LoadBMP( "img/hello_world.bmp" );
+    gHelloWorld = IMG_Load(image);
     if( gHelloWorld == NULL )
     {
         printf( "Unable to load image %s! SDL Error: %s\n", "02_getting_an_image_on_the_screen/hello_world.bmp", SDL_GetError() );
@@ -75,9 +74,9 @@ void Window::close()
     SDL_Quit();
 }
 
-void Window::displayImage() {
+void Window::displayImage(char* image) {
     //Load media
-    if( !loadMedia() )
+    if( !loadMedia(image) )
     {
         printf( "Failed to load media!\n" );
     }

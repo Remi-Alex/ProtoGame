@@ -25,18 +25,16 @@ class Window {
         SDL_Surface* gHelloWorld;
     
         //Loads media
-        bool loadMedia(void);
+        bool loadMedia(char*);
 
     public :
         Window();
     
-        //Starts up SDL and creates window
         bool init(void);
 
-        //Frees media and shuts down SDL
         void close(void);
     
-        void displayImage(void);
+        void displayImage(char*);
 };
 
 #endif
