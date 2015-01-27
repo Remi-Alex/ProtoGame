@@ -46,10 +46,8 @@ bool Window::init()
 
 bool Window::loadMedia(char* image)
 {
-    //Loading success flag
     bool success = true;
     
-    //Load splash image
     gHelloWorld = IMG_Load(image);
     if( gHelloWorld == NULL )
     {

@@ -24,17 +24,35 @@ class Window {
         //The image we will load and show on the screen
         SDL_Surface* gHelloWorld;
     
-        //Loads media
-        bool loadMedia(char*);
+        /**
+         *  Loads a media
+         *  @param image the media to be loaded
+         *  @return true if it has been correctly loaded
+         */
+        bool loadMedia(char* image);
 
     public :
+        /**
+         *  Constructor of the Window class
+         */
         Window();
     
+        /**
+         *  Initialize the window
+         *  @return true if it's been correctly initialized
+         */
         bool init(void);
 
+        /**
+         *  Used to properly close the window. Also free the memory
+         */
         void close(void);
     
-        void displayImage(char*);
+        /**
+         *  Display an image in the window
+         *  @param image the image to be displayed
+         */
+        void displayImage(char* image);
 };
 
 #endif
