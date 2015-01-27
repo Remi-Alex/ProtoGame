@@ -1,10 +1,9 @@
 //
 //  window.cpp
-//  src
+//  V1 - 23/01/2015
 //
-//  Created by Rémi MARTIN on 23/01/2015.
-//  Copyright (c) 2015 Rémi MARTIN. All rights reserved.
-//
+//  Copyright (c) 2015 Remi&Alex. All rights reserved.
+
 #include "window.h"
 
 Window::Window() {
@@ -46,6 +45,8 @@ bool Window::init()
 
 bool Window::loadMedia()
 {
+    // TODO: Add image choosing
+
     //Loading success flag
     bool success = true;
     
