@@ -5,7 +5,11 @@
 //  Copyright (c) 2015 Remi&Alex. All rights reserved.
 
 #include "window.h"
+#ifdef __APPLE__
 #include <SDL2_image/SDL_image.h>
+#else
+#include <SDL2/SDL_image.h>
+#endif
 
 Window::Window() {
     // Initialize variables
