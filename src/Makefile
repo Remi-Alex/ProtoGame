@@ -1,4 +1,4 @@
-SRC=model/unit.cpp display/window.cpp main.cpp
+SRC=model/unit.cpp display/window.cpp main.cpp inputs/inputHandler.cpp
 OBJ=$(SRC:.cpp=.o)
 CC=gcc
 NAME=ProtoGame
