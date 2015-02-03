@@ -9,6 +9,9 @@
 
 InputHandler::InputHandler() {
 	commands = (Command**) malloc(sizeof(Command*) * NB_COMMAND_TYPES);
+	for(unsigned short i = 0; i < NB_COMMAND_TYPES; ++i) {
+		commands[i] = NULL;
+	}
 }
 
 InputHandler::~InputHandler() {
