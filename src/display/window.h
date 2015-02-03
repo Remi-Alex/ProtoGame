@@ -22,7 +22,7 @@ class Window {
         SDL_Surface* gScreenSurface;
     
         //The image we will load and show on the screen
-        SDL_Surface* gHelloWorld;
+        SDL_Surface* gLoadedMedia;
     
         /**
          *  Loads a media

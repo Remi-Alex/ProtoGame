@@ -15,7 +15,7 @@ Window::Window() {
     // Initialize variables
     gWindow = NULL;
     gScreenSurface = NULL;
-    gHelloWorld = NULL;
+    gLoadedMedia = NULL;
 }
 
 bool Window::init()
@@ -52,8 +52,8 @@ bool Window::loadMedia(char* image)
 {
     bool success = true;
     
-    gHelloWorld = IMG_Load(image);
-    if( gHelloWorld == NULL )
+    gLoadedMedia = IMG_Load(image);
+    if( gLoadedMedia == NULL )
     {
         printf( "Unable to load image %s! SDL Error: %s\n", "02_getting_an_image_on_the_screen/hello_world.bmp", SDL_GetError() );
         success = false;
@@ -65,12 +65,16 @@ bool Window::loadMedia(char* image)
 void Window::close()
 {
     //Deallocate surface
-    SDL_FreeSurface( gHelloWorld );
-    gHelloWorld = NULL;
+    if(gLoadedMedia != NULL) {
+        SDL_FreeSurface( gLoadedMedia );
+        gLoadedMedia = NULL;
+    }
     
     //Destroy window
-    SDL_DestroyWindow( gWindow );
-    gWindow = NULL;
+    if(gWindow != NULL) {
+        SDL_DestroyWindow( gWindow );
+        gWindow = NULL;
+    }
     
     //Quit SDL subsystems
     SDL_Quit();
@@ -85,7 +89,7 @@ void Window::displayImage(char* image) {
     else
     {
         //Apply the image
-        SDL_BlitSurface( gHelloWorld, NULL, gScreenSurface, NULL );
+        SDL_BlitSurface( gLoadedMedia, NULL, gScreenSurface, NULL );
         
         //Update the surface
         SDL_UpdateWindowSurface( gWindow );
