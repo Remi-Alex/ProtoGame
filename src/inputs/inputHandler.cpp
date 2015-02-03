@@ -15,6 +15,12 @@ InputHandler::InputHandler() {
 }
 
 InputHandler::~InputHandler() {
+	// TODO: Move it, if the handler doesn't create the Command objects
+	for(unsigned short i = 0; i < NB_COMMAND_TYPES; ++i) {
+		if(commands[i] != NULL) {
+			free(commands[i]);
+		}
+	}
 	free(commands);
 }
 
