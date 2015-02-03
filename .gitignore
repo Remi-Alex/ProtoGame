@@ -5,4 +5,8 @@
 # C++ stuff
 *.o
 
+#Test stuff
+src/lib
+
 ProtoGame
+Tests
