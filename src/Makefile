@@ -1,4 +1,4 @@
-SRC=model/unit.cpp display/window.cpp main.cpp
+SRC=model/unit.cpp display/window.cpp main.cpp inputs/inputHandler.cpp
 SRC_TEST=test/Test.cpp
 OBJ=$(SRC:.cpp=.o)
 OBJ_TEST=$(SRC_TEST:.cpp=.o)
@@ -26,4 +26,4 @@ test: $(LIBS_TEST) $(OBJ_TEST)
 	$(CC) -c $< -o $@
 
 clean:
-	rm $(OBJ) $(OBJ_TEST) $(NAME) $(NAME_TEST)
+	@rm -rf $(OBJ) $(OBJ_TEST) $(NAME) $(NAME_TEST)
