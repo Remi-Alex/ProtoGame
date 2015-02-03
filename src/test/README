@@ -1,0 +1,24 @@
+---UnitTest++ framework---
+
+INSTALLATION
+1. Download the zip (version 1.4): http://en.sourceforge.jp/projects/sfnet_unittest-cpp/releases/
+2. Unzip the folder somewhere
+3. Compile the library with the "make all" command
+4. Create a directory named "lib" in the "src" folder of the game
+5. Copy the file "libUnitTest++.a" and the "src" folder (just the .h files and the OS folders) of the UnitTest++ library into your new "lib" folder
+
+You should have this :
+
++ProtoGame
+|
++-src
+ |
+ +-lib
+  |
+  +-libUnitTest++.a
+  +-src
+   |
+   +-Posix
+   +-Win32
+   +-UnitTest++.h
+   +.... many other .h 
