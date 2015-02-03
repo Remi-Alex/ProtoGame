@@ -6,24 +6,33 @@
 
 #ifndef input_handler_h
 #define input_handler_h
+
 #include "command.h"
+#include "commandTypes.h"
+
+#define NB_COMMAND_TYPES RIGHT_ARROW + 1
 
 class InputHandler {
 	public:
 		// ----- Member(s)
 		// ----- Function(s)
+		InputHandler();
+
+		~InputHandler();
+
+		/**
+		 *	Handles a new even a call the associated command
+		 */
 		void handleInput();
+
+		/**
+		 *	
+		 */
+		void bindButton1();
 	protected:
 	private:
 		// ----- Member(s)
-		Command* button1;
-		Command* button2;
-		Command* button3;
-		Command* button4;
-		Command* upArrow;
-		Command* downArrow;
-		Command* leftArrow;
-		Command* rightArrow;
+		Command** commands;
 		// ----- Function(s)
 };
 
