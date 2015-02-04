@@ -1,6 +1,6 @@
 //
 //  unit.cpp
-//  V1 - 23/01/2015
+//  V0.1 - 23/01/2015
 //
 //  Copyright (c) 2015 Remi&Alex. All rights reserved.
 //

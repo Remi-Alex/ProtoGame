@@ -1,6 +1,6 @@
 //
 //  main.cpp
-//  V1 - 24/01/2015
+//  V0.1 - 24/01/2015
 //
 //  Copyright (c) 2015 Remi&Alex. All rights reserved.
 
