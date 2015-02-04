@@ -8,7 +8,7 @@
 #include <stdlib.h>
 
 InputHandler::InputHandler() {
-	commands = (Command**) malloc(sizeof(Command*) * NB_COMMAND_TYPES);
+	commands = new Command* [NB_COMMAND_TYPES];
 	for(unsigned short i = 0; i < NB_COMMAND_TYPES; ++i) {
 		commands[i] = NULL;
 	}
@@ -18,10 +18,10 @@ InputHandler::~InputHandler() {
 	// TODO: Move it, if the handler doesn't create the Command objects
 	for(unsigned short i = 0; i < NB_COMMAND_TYPES; ++i) {
 		if(commands[i] != NULL) {
-			free(commands[i]);
+			delete commands[i];
 		}
 	}
-	free(commands);
+	delete commands;
 }
 
 void InputHandler::handleInput() {

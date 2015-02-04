@@ -9,9 +9,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-/**
- *  Comment HARD things
- */
 Unit::Unit() : strength(1), stamina(1), will(1), intelligence(1), luck(1), dexterity(1), lifeSteal(0), penetration(0), lifeRegen(0) {
     this->computeStats();
 }

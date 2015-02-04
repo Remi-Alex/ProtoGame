@@ -3,13 +3,11 @@ A test class exemple
 */
 
 //Test named FailSpectacularly
-TEST(FailSpectacularly)
-{
+TEST(FailSpectacularly) {
 	//Will check if true
 	CHECK(false);
 }
 
-TEST(Succeeds)
-{
+TEST(Succeeds) {
 	CHECK(true);
 }

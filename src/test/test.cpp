@@ -1,5 +1,5 @@
 #include "../lib/src/UnitTest++.h"
-#include "AClassTest.cpp"
+#include "aClassTest.cpp"
 
 int main()
 {

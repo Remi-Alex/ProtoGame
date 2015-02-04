@@ -1,9 +1,8 @@
-SRC=model/unit.cpp display/window.cpp main.cpp inputs/inputHandler.cpp
-SRC_TEST=test/Test.cpp
+SRC=model/unit.cpp model/player.cpp display/window.cpp main.cpp inputs/inputHandler.cpp
+SRC_TEST=test/test.cpp
 OBJ=$(SRC:.cpp=.o)
 OBJ_TEST=$(SRC_TEST:.cpp=.o)
-CC=gcc
-CC_TEST=g++
+CC=g++
 NAME=ProtoGame
 NAME_TEST=Tests
 CCFLAGS=-Wall -g
@@ -18,7 +17,7 @@ game: $(OBJ)
 
 test: $(LIBS_TEST) $(OBJ_TEST)
 	@echo Linking $(NAME_TEST)...
-	@$(CC_TEST) -o $(NAME_TEST) $(OBJ_TEST) $(LIBS_TEST)
+	@$(CC) -o $(NAME_TEST) $(OBJ_TEST) $(LIBS_TEST)
 	@echo Running unit tests...
 	@./$(NAME_TEST)
 

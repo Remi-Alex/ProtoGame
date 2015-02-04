@@ -10,6 +10,7 @@
 #define unit__h
 
 #include <stdio.h>
+#include "direction.h"
 
 /**
  *  @class Unit
@@ -142,6 +143,12 @@ class Unit {
      *  @param ennemi the ennemi unit to attack
      */
     void attack(Unit* ennemi);
+
+    /**
+     *  Used to move the unit given a direction
+     *  @param direction
+     */
+    virtual void move(Direction direction) = 0;
 };
 
 #endif /* defined(example__h) */
