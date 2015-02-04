@@ -11,6 +11,7 @@ Player::Player() : Unit() {
 
 }
 
-void Player::move(Direction direction) {
-	
+void Player::move(float moveX, float moveY) {
+	this->posX += moveX;
+	this->posY += moveY;
 }

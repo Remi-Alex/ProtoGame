@@ -27,7 +27,8 @@ class Player: public Unit {
         // ----- Member(s)
         // ----- Function(s)
         Player();
-        void move(Direction direction);
+        //@Override
+        void move(float moveX, float moveY);
 
 };
 

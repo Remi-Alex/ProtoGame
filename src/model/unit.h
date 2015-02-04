@@ -10,7 +10,6 @@
 #define unit__h
 
 #include <stdio.h>
-#include "direction.h"
 
 /**
  *  @class Unit
@@ -25,6 +24,9 @@ class Unit {
     // ----- Function(s)
     protected :
     // ----- Member(s)
+    int posX;
+    int posY;
+
     unsigned short strength;
     unsigned short stamina;
     unsigned short dexterity;
@@ -144,12 +146,12 @@ class Unit {
      */
     void attack(Unit* ennemi);
 
-    /**
-     *  Used to move the unit given a direction
-     *  @param direction
+     /**
+     *   Moves the unit on X and Y by the amounts given in parameters
+     *   @param moveX : float in [-1;1] 1 = right, -1 = left
+     *   @param moveY : float in [-1;1] 1 = down, -1 = up
      */
-    virtual void move(Direction direction) = 0;
+    virtual void move(float moveX, float moveY) = 0;
 };
 
-#endif /* defined(example__h) */
-
+#endif

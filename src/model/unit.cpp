@@ -9,11 +9,13 @@
 #include <stdlib.h>
 #include <time.h>
 
-Unit::Unit() : strength(1), stamina(1), will(1), intelligence(1), luck(1), dexterity(1), lifeSteal(0), penetration(0), lifeRegen(0) {
+Unit::Unit() : posX(0), posY(0), strength(1), stamina(1), will(1), intelligence(1), luck(1), dexterity(1), lifeSteal(0), penetration(0), lifeRegen(0) {
     this->computeStats();
 }
 
-Unit::Unit(unsigned short strength, unsigned short stamina, unsigned short will, unsigned short intelligence, unsigned short luck, unsigned short dexterity) : strength(strength), stamina(stamina), will(will), intelligence(intelligence), luck(luck), dexterity(dexterity), lifeSteal(0), penetration(0), lifeRegen(0) {
+Unit::Unit(unsigned short strength, unsigned short stamina, unsigned short will, unsigned short intelligence, 
+    unsigned short luck, unsigned short dexterity) 
+: posX(0), posY(0), strength(strength), stamina(stamina), will(will), intelligence(intelligence), luck(luck), dexterity(dexterity), lifeSteal(0), penetration(0), lifeRegen(0) {
     this->computeStats();
 }
 
