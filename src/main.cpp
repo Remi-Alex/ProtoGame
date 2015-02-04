@@ -36,7 +36,7 @@ int main (int argc, char* args[]) {
 		printf( "Failed to initialize!\n" );
 	}
 	else {
-		w.displayImage("img/hello_world.bmp");
+		//w.displayImage("img/hello_world.bmp");
 
 		gameLoop(w);
 	}
