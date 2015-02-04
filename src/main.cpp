@@ -7,36 +7,38 @@
 #include <stdio.h>
 #include "display/window.h"
 #include "model/unit.h"
+#include "inputs/inputHandler.h"
 
-int main( int argc, char* args[] )
-{
-	Window w;
-	if( !w.init() )
-	{
-		printf( "Failed to initialize!\n" );
-	}
-	else
-	{
-		w.displayImage("img/hello_world.bmp");
+void gameLoop(Window w) {
+	bool quit = false;
+	SDL_Event e;
+	InputHandler ih;
 
-		bool quit = false;
-		SDL_Event e;
-
-		// Game loop
-		while( !quit )
-		{
-			//Handle events on queue
-			while( SDL_PollEvent( &e ) != 0 )
-			{
-				//User requests quit
-				if( e.type == SDL_QUIT )
-				{
-					quit = true;
-					w.close();
-				}
+	// Game loop
+	while(!quit) {
+		//Handle events on queue
+		while(SDL_PollEvent(&e) != 0) {
+			//User requests quit
+			if(e.type == SDL_QUIT) {
+				quit = true;
+				w.close();
+			} else if(e.type == SDL_KEYDOWN) {
+				ih.handleInput(e);
 			}
 		}
 	}
+}
 
-return 0;
+int main (int argc, char* args[]) {
+	Window w;
+	if(!w.init()) {
+		printf( "Failed to initialize!\n" );
+	}
+	else {
+		w.displayImage("img/hello_world.bmp");
+
+		gameLoop(w);
+	}
+
+	return 0;
 }

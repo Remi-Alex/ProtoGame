@@ -9,6 +9,7 @@
 
 #include "command.h"
 #include "commandTypes.h"
+#include <SDL2/SDL.h>
 
 #define NB_COMMAND_TYPES RIGHT_ARROW + 1
 
@@ -23,7 +24,7 @@ class InputHandler {
 		/**
 		 *	Handles a new even a call the associated command
 		 */
-		void handleInput();
+		void handleInput(SDL_Event e);
 
 		/**
 		 *	

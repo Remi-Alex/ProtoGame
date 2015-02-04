@@ -6,6 +6,7 @@
 
 #include "inputHandler.h"
 #include <stdlib.h>
+#include <iostream>
 
 InputHandler::InputHandler() {
 	commands = new Command* [NB_COMMAND_TYPES];
@@ -24,8 +25,26 @@ InputHandler::~InputHandler() {
 	delete commands;
 }
 
-void InputHandler::handleInput() {
-	/*if (isPressed(BUTTON_X)) {
-		buttonX_->execute();
-	}*/
+void InputHandler::handleInput(SDL_Event e) {
+	switch(e.key.keysym.sym) {
+		case SDLK_UP:
+			std::cout << "Key up";
+			break;
+
+		case SDLK_DOWN:
+			std::cout << "Key down";
+			break;
+
+		case SDLK_LEFT:
+			std::cout << "Key left";
+			break;
+
+		case SDLK_RIGHT:
+			std::cout << "Key right";
+			break;
+
+		default:
+			std::cout << "Lauwl";
+			break;
+	}
 }
