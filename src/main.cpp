@@ -23,9 +23,10 @@ void gameLoop(Window w) {
 				quit = true;
 				w.close();
 			} else if(e.type == SDL_KEYDOWN) {
-				ih.handleInput(e);
+				ih.handleInput(e, &w);
 			}
 		}
+		SDL_RenderPresent(w.getGRenderer());
 	}
 }
 

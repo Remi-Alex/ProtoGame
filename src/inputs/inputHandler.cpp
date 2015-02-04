@@ -25,11 +25,15 @@ InputHandler::~InputHandler() {
 	delete commands;
 }
 
-void InputHandler::handleInput(SDL_Event e) {
+void InputHandler::handleInput(SDL_Event e, Window* w) {
 	switch(e.key.keysym.sym) {
-		case SDLK_UP:
-			std::cout << "Key up";
-			break;
+		{
+			case SDLK_UP:
+				std::cout << "Key up";
+				SDL_Rect outlineRect = { 10, 10, 100, 100};
+				SDL_RenderDrawRect( w->getGRenderer(), &outlineRect );
+				break;
+		}
 
 		case SDLK_DOWN:
 			std::cout << "Key down";

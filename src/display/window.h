@@ -23,6 +23,9 @@ class Window {
     
         //The image we will load and show on the screen
         SDL_Surface* gLoadedMedia;
+
+        //The window renderer
+        SDL_Renderer* gRenderer;
     
         /**
          *  Loads a media
@@ -53,6 +56,8 @@ class Window {
          *  @param image the image to be displayed
          */
         void displayImage(char* image);
+
+        SDL_Renderer* getGRenderer();
 };
 
 #endif
