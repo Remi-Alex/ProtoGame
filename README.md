@@ -1,4 +1,4 @@
-# ProtoGame
+# ProtoGame`V0.1`
 Rogue-like game coded in C++ with RPG elements
 
 ## Required libraries

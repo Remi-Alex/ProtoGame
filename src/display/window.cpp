@@ -44,11 +44,14 @@ bool Window::init()
             //Get window surface
             gScreenSurface = SDL_GetWindowSurface( gWindow );
 
-            gRenderer = SDL_GetRenderer(gWindow);
+            //gRenderer = SDL_GetRenderer(gWindow);
+            gRenderer = SDL_CreateRenderer( gWindow, -1, SDL_RENDERER_ACCELERATED );
             if( gRenderer == NULL )
             {
-                printf( "Renderer could not be created! SDL Error: %s\n", SDL_GetError() );
-                success = false;
+                if((gRenderer = SDL_GetRenderer(gWindow)) == NULL) {
+                    printf( "Renderer could not be created! SDL Error: %s\n", SDL_GetError() );
+                    success = false;
+                }
             } else {
                 SDL_SetRenderDrawColor( gRenderer, 0x00, 0xFF, 0x00, 0xFF ); 
             }
@@ -74,6 +77,11 @@ bool Window::loadMedia(char* image)
 
 void Window::close()
 {
+    if(gRenderer != NULL) {
+        SDL_DestroyRenderer(gRenderer);
+        gRenderer = NULL;
+    }
+
     //Deallocate surface
     if(gLoadedMedia != NULL) {
         SDL_FreeSurface( gLoadedMedia );
@@ -87,6 +95,7 @@ void Window::close()
     }
     
     //Quit SDL subsystems
+    IMG_Quit();
     SDL_Quit();
 }
 
