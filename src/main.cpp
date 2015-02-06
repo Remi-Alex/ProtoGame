@@ -21,13 +21,13 @@ void gameLoop(Window w) {
 			//User requests quit
 			if(e.type == SDL_QUIT) {
 				quit = true;
-				w.close();
 			} else if(e.type == SDL_KEYDOWN) {
 				ih.handleInput(e, &w);
 			}
 		}
 		SDL_RenderPresent(w.getGRenderer());
 	}
+	w.close();
 }
 
 int main (int argc, char* args[]) {

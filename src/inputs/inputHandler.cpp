@@ -30,27 +30,22 @@ InputHandler::~InputHandler() {
 void InputHandler::handleInput(SDL_Event e, Window* w) {
 	switch(e.key.keysym.sym) {
 		case SDLK_UP:
-			std::cout << "Key up";
 			j--;
 			break;
 
 		case SDLK_DOWN:
-			std::cout << "Key down";
 			j++;
 			break;
 
 		case SDLK_LEFT:
-			std::cout << "Key left";
 			i--;
 			break;
 
 		case SDLK_RIGHT:
-			std::cout << "Key right";
 			i++;
 			break;
 
 		default:
-			std::cout << "Lauwl";
 			break;
 	}
 

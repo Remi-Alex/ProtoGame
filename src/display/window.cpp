@@ -42,7 +42,7 @@ bool Window::init()
         else
         {
             //Get window surface
-            gScreenSurface = SDL_GetWindowSurface( gWindow );
+            //gScreenSurface = SDL_GetWindowSurface( gWindow );
 
             //gRenderer = SDL_GetRenderer(gWindow);
             gRenderer = SDL_CreateRenderer( gWindow, -1, SDL_RENDERER_ACCELERATED );
