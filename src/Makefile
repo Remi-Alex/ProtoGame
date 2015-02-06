@@ -1,13 +1,15 @@
-SRC=model/unit.cpp model/player.cpp display/window.cpp main.cpp inputs/inputHandler.cpp
-SRC_TEST=test/test.cpp
-OBJ=$(SRC:.cpp=.o)
+PACKAGES=display inputs model
+SRC= $(wildcard $(addsuffix /*.cpp,$(PACKAGES)))
+SRC_GAME= $(SRC) $(wildcard *.cpp) 
+SRC_TEST=test/test.cpp $(SRC)
+OBJ=$(SRC_GAME:.cpp=.o)
 OBJ_TEST=$(SRC_TEST:.cpp=.o)
 CC=g++
 NAME=ProtoGame
 NAME_TEST=Tests
 CCFLAGS=-Wall -g
 LIBS=-lSDL2 -lSDL2_image
-LIBS_TEST=lib/libUnitTest++.a
+LIBS_TEST=lib/libUnitTest++.a $(LIBS)
 
 all: test game
 
