@@ -12,6 +12,6 @@ Player::Player() : Unit() {
 }
 
 void Player::move(float moveX, float moveY) {
-	this->posX += moveX;
-	this->posY += moveY;
+	this->posX += moveX*movementSpeed;
+	this->posY += moveY*movementSpeed;
 }

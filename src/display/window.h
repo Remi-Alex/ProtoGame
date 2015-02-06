@@ -18,11 +18,8 @@ class Window {
         //The window we'll be rendering to
         SDL_Window* gWindow;
     
-        //The surface contained by the window
-        SDL_Surface* gScreenSurface;
-    
         //The image we will load and show on the screen
-        SDL_Surface* gLoadedMedia;
+        SDL_Texture* gTexture;
 
         //The window renderer
         SDL_Renderer* gRenderer;
@@ -33,6 +30,8 @@ class Window {
          *  @return true if it has been correctly loaded
          */
         bool loadMedia(char* image);
+
+        SDL_Texture* loadTexture(char* path );
 
     public :
         /**
@@ -51,13 +50,9 @@ class Window {
          */
         void close(void);
     
-        /**
-         *  Display an image in the window
-         *  @param image the image to be displayed
-         */
-        void displayImage(char* image);
-
         SDL_Renderer* getGRenderer();
+
+        SDL_Texture* getGTexture();
 };
 
 #endif

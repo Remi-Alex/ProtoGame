@@ -25,6 +25,8 @@ void gameLoop(Window w) {
 				ih.handleInput(e, &w);
 			}
 		}
+		
+		//Update screen
 		SDL_RenderPresent(w.getGRenderer());
 	}
 	w.close();
@@ -36,7 +38,10 @@ int main (int argc, char* args[]) {
 		printf( "Failed to initialize!\n" );
 	}
 	else {
-		//w.displayImage("img/hello_world.bmp");
+		//Clear screen 
+		SDL_RenderClear(w.getGRenderer()); 
+		//Render texture to screen 
+		SDL_RenderCopy(w.getGRenderer(), w.getGTexture(), NULL, NULL );
 
 		gameLoop(w);
 	}
