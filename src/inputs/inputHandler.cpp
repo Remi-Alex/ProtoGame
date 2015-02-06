@@ -28,25 +28,36 @@ InputHandler::~InputHandler() {
 }
 
 void InputHandler::handleInput(SDL_Event e, Window* w) {
+	CommandTypes ct;
 	switch(e.key.keysym.sym) {
 		case SDLK_UP:
+			ct = UP_ARROW;
 			j--;
 			break;
 
 		case SDLK_DOWN:
+			ct = DOWN_ARROW;
 			j++;
 			break;
 
 		case SDLK_LEFT:
+			ct = LEFT_ARROW;
 			i--;
 			break;
 
 		case SDLK_RIGHT:
+			ct = RIGHT_ARROW;
 			i++;
 			break;
 
 		default:
+			ct = OTHER;
 			break;
+	}
+
+	if(ct != OTHER) {
+		Command* c = commands[ct];
+		if(c != NULL) c->execute();
 	}
 
 	if(i < 0) i = 0;
@@ -55,4 +66,8 @@ void InputHandler::handleInput(SDL_Event e, Window* w) {
 	SDL_SetRenderDrawColor( w->getGRenderer(), 0x00, 0x00, 0x00, 0x00 ); 
 	SDL_Rect outlineRect = { i, j, 100, 100};
 	SDL_RenderDrawRect( w->getGRenderer(), &outlineRect );
+}
+
+void InputHandler::bind(CommandTypes ct, Command* c) {
+	commands[ct] = c;
 }

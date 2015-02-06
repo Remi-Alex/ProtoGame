@@ -10,9 +10,10 @@
 #include "command.h"
 #include "commandTypes.h"
 #include "../display/window.h"
+#include "../model/unit.h"
 #include <SDL2/SDL.h>
 
-#define NB_COMMAND_TYPES RIGHT_ARROW + 1
+#define NB_COMMAND_TYPES OTHER
 
 class InputHandler {
 	public:
@@ -30,7 +31,7 @@ class InputHandler {
 		/**
 		 *	
 		 */
-		void bindButton1();
+		void bind(CommandTypes, Command*);
 	protected:
 	private:
 		// ----- Member(s)
