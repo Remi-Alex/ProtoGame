@@ -16,8 +16,10 @@ void gameLoop(Window w) {
 
 	// Game loop
 	while(!quit) {
-		//SDL_SetRenderDrawColor(w.getGRenderer(), 0xFF, 0xFF, 0xFF, 0xFF);
-		//SDL_RenderClear(w.getGRenderer());
+
+		// FIXME: The square is not displayed when not beeing moved
+		SDL_RenderClear(w.getGRenderer());
+		SDL_RenderCopy(w.getGRenderer(), w.getGTexture(), NULL, NULL );
 
 		//Handle events on queue
 		while(SDL_PollEvent(&e) != 0 && !quit) {
@@ -40,11 +42,6 @@ int main (int argc, char* args[]) {
 		printf( "Failed to initialize!\n" );
 	}
 	else {
-		//Clear screen 
-		SDL_RenderClear(w.getGRenderer()); 
-		//Render texture to screen 
-		SDL_RenderCopy(w.getGRenderer(), w.getGTexture(), NULL, NULL );
-
 		gameLoop(w);
 	}
 
