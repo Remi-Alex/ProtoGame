@@ -7,10 +7,13 @@
 #ifndef command_h
 #define command_h
 
+#include "../model/player.h"
+
 class Command {
 	public:
 		// ----- Member(s)
 		// ----- Function(s)
+		Command(Player*);
 		virtual ~Command() {}
 		virtual void execute() = 0;
 	protected:
