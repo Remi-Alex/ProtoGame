@@ -16,8 +16,11 @@ void gameLoop(Window w) {
 
 	// Game loop
 	while(!quit) {
+		//SDL_SetRenderDrawColor(w.getGRenderer(), 0xFF, 0xFF, 0xFF, 0xFF);
+		//SDL_RenderClear(w.getGRenderer());
+
 		//Handle events on queue
-		while(SDL_PollEvent(&e) != 0) {
+		while(SDL_PollEvent(&e) != 0 && !quit) {
 			//User requests quit
 			if(e.type == SDL_QUIT) {
 				quit = true;
@@ -25,8 +28,7 @@ void gameLoop(Window w) {
 				ih.handleInput(e, &w);
 			}
 		}
-		
-		//Update screen
+
 		SDL_RenderPresent(w.getGRenderer());
 	}
 	w.close();

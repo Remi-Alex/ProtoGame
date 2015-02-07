@@ -40,7 +40,7 @@ bool Window::init()
         }
         else
         {
-            gRenderer = SDL_CreateRenderer( gWindow, -1, SDL_RENDERER_ACCELERATED );
+            gRenderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
             if( gRenderer == NULL )
             {
                 if((gRenderer = SDL_GetRenderer(gWindow)) == NULL) {
@@ -48,7 +48,8 @@ bool Window::init()
                     success = false;
                 }
             } else {
-                SDL_SetRenderDrawColor( gRenderer, 0x00, 0xFF, 0x00, 0xFF );
+                //Initialize renderer color
+                SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
 
                 //Initialize PNG loading 
                 int imgFlags = IMG_INIT_PNG; 
@@ -85,13 +86,14 @@ void Window::close()
     gTexture = NULL;
 
     if(gRenderer != NULL) {
+        SDL_RenderClear(gRenderer);
         SDL_DestroyRenderer(gRenderer);
         gRenderer = NULL;
     }
 
     //Destroy window
     if(gWindow != NULL) {
-        SDL_DestroyWindow( gWindow );
+        SDL_DestroyWindow(gWindow);
         gWindow = NULL;
     }
     
@@ -117,7 +119,8 @@ SDL_Texture* Window::loadTexture(const std::string path) {
         } 
         //Get rid of old loaded surface 
         SDL_FreeSurface( loadedSurface ); 
-    } 
+    }
+
     return newTexture; 
 } 
 
