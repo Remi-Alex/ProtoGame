@@ -8,6 +8,7 @@
 #define window_h
 
 #include <SDL2/SDL.h>
+#include <string>
 
 class Window {
     private :
@@ -29,9 +30,9 @@ class Window {
          *  @param image the media to be loaded
          *  @return true if it has been correctly loaded
          */
-        bool loadMedia(char* image);
+        bool loadMedia(const std::string image);
 
-        SDL_Texture* loadTexture(char* path );
+        SDL_Texture* loadTexture(const std::string path);
 
     public :
         /**

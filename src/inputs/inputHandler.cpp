@@ -63,7 +63,7 @@ void InputHandler::handleInput(SDL_Event e, Window* w) {
 	if(i < 0) i = 0;
 	if(j < 0) j = 0;
 
-	SDL_SetRenderDrawColor( w->getGRenderer(), 0x00, 0x00, 0x00, 0x00 ); 
+	//SDL_SetRenderDrawColor( w->getGRenderer(), 0x00, 0x00, 0x00, 0x00 ); 
 	SDL_Rect outlineRect = { i, j, 100, 100};
 	SDL_RenderDrawRect( w->getGRenderer(), &outlineRect );
 }
