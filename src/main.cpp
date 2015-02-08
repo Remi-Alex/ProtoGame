@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include "display/window.h"
+#include "display/renderer.h"
 #include "model/unit.h"
 #include "inputs/inputHandler.h"
 
@@ -13,6 +14,8 @@ void gameLoop(Window w) {
 	bool quit = false;
 	SDL_Event e;
 	InputHandler ih;
+
+	Renderer* r = &Renderer::getInstance(w);
 
 	// Game loop
 	while(!quit) {
@@ -30,6 +33,8 @@ void gameLoop(Window w) {
 				ih.handleInput(e, &w);
 			}
 		}
+
+		r->render();
 
 		SDL_RenderPresent(w.getGRenderer());
 	}

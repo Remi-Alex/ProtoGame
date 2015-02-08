@@ -7,3 +7,7 @@
 #include "renderer.h"
 
 Renderer::Renderer(Window w) : window(w) {}
+
+void Renderer::render() {
+	// TODO: Right code...
+}
