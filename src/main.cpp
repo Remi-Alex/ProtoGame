@@ -15,7 +15,7 @@ void gameLoop(Window w) {
 	SDL_Event e;
 	InputHandler ih;
 
-	Renderer* r = &Renderer::getInstance(w);
+	Renderer* r = &Renderer::getInstance(&w);
 
 	// Game loop
 	while(!quit) {
