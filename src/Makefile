@@ -4,7 +4,7 @@ SRC_GAME= $(SRC) $(wildcard *.cpp)
 SRC_TEST=test/test.cpp $(SRC)
 OBJ=$(SRC_GAME:.cpp=.o)
 OBJ_TEST=$(SRC_TEST:.cpp=.o)
-CC=g++
+CC=g++ -std=c++11
 NAME=ProtoGame
 NAME_TEST=Tests
 CCFLAGS=-Wall -g
