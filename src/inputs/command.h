@@ -9,13 +9,15 @@
 
 #include "../model/player.h"
 
+#define SPEED 1
+
 class Command {
 	public:
 		// ----- Member(s)
 		// ----- Function(s)
-		Command(Player*);
+		Command() {}
 		virtual ~Command() {}
-		virtual void execute() = 0;
+		virtual void execute(void*) = 0;
 	protected:
 	private:
 };

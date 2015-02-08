@@ -162,6 +162,16 @@ class Unit {
      *  @return the posY of the unit
      */
     int getPosY();
+
+    /**
+     *  @param posY the new posY of the unit
+     */
+    void setPosY(int posY);
+
+    /**
+     *  @param posX the new posX of the unit
+     */
+    void setPosX(int posX);
 };
 
 #endif

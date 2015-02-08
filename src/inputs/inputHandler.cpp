@@ -19,15 +19,15 @@ InputHandler::InputHandler() {
 
 InputHandler::~InputHandler() {
 	// TODO: Move it, if the handler doesn't create the Command objects
-	for(unsigned short i = 0; i < NB_COMMAND_TYPES; ++i) {
-		if(commands[i] != NULL) {
-			delete commands[i];
-		}
-	}
-	delete commands;
+	// for(unsigned short i = 0; i < NB_COMMAND_TYPES; ++i) {
+	// 	if(commands[i] != NULL) {
+	// 		delete commands[i];
+	// 	}
+	// }
+	// delete commands;
 }
 
-void InputHandler::handleInput(SDL_Event e, Window* w) {
+void InputHandler::handleInput(SDL_Event e) {
 	CommandTypes ct;
 	switch(e.key.keysym.sym) {
 		case SDLK_UP:
@@ -53,7 +53,7 @@ void InputHandler::handleInput(SDL_Event e, Window* w) {
 
 	if(ct != OTHER) {
 		Command* c = commands[ct];
-		if(c != NULL) c->execute();
+		if(c != NULL) c->execute(&ct);
 	}
 }
 

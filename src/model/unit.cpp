@@ -104,3 +104,11 @@ int Unit::getPosX() {
 int Unit::getPosY() {
     return posY;
 }
+
+void Unit::setPosY(int posY) {
+    this->posY = posY;
+}
+
+void Unit::setPosX(int posX) {
+    this->posX = posX;
+}

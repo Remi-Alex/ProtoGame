@@ -26,7 +26,7 @@ class InputHandler {
 		/**
 		 *	Handles a new even a call the associated command
 		 */
-		void handleInput(SDL_Event, Window* w);
+		void handleInput(SDL_Event);
 
 		/**
 		 *	

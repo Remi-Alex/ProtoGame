@@ -10,6 +10,8 @@
 #include "display/graphicUnit.h"
 #include "model/player.h"
 #include "inputs/inputHandler.h"
+#include "inputs/movementCommand.h"
+#include "inputs/commandTypes.h"
 
 void gameLoop(Window w) {
 	bool quit = false;
@@ -21,6 +23,12 @@ void gameLoop(Window w) {
 	Player p;
 	GraphicUnit gu(&p);
 	r->addUnit(&gu);
+
+	MovementCommand mc(&p);
+	ih.bind(UP_ARROW, &mc);
+	ih.bind(DOWN_ARROW, &mc);
+	ih.bind(LEFT_ARROW, &mc);
+	ih.bind(RIGHT_ARROW, &mc);
 
 	// Game loop
 	while(!quit) {
@@ -35,7 +43,7 @@ void gameLoop(Window w) {
 			if(e.type == SDL_QUIT) {
 				quit = true;
 			} else if(e.type == SDL_KEYDOWN) {
-				ih.handleInput(e, &w);
+				ih.handleInput(e);
 			}
 		}
 
