@@ -15,3 +15,8 @@ void Renderer::render() {
 		++it;
 	}
 }
+
+bool Renderer::addUnit(GraphicUnit* u) {
+	units.push_front(u);
+	return true;
+}

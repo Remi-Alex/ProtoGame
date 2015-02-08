@@ -96,3 +96,11 @@ void Unit::attack(Unit* ennemi) {
     ennemi->HP -= damages;
     if(ennemi->HP < 0) ennemi->HP = 0;
 }
+
+int Unit::getPosX() {
+    return posX;
+}
+
+int Unit::getPosY() {
+    return posY;
+}

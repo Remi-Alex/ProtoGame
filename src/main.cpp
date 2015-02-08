@@ -7,7 +7,8 @@
 #include <stdio.h>
 #include "display/window.h"
 #include "display/renderer.h"
-#include "model/unit.h"
+#include "display/graphicUnit.h"
+#include "model/player.h"
 #include "inputs/inputHandler.h"
 
 void gameLoop(Window w) {
@@ -16,6 +17,10 @@ void gameLoop(Window w) {
 	InputHandler ih;
 
 	Renderer* r = &Renderer::getInstance(&w);
+
+	Player p;
+	GraphicUnit gu(&p);
+	r->addUnit(&gu);
 
 	// Game loop
 	while(!quit) {

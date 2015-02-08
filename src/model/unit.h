@@ -146,12 +146,22 @@ class Unit {
      */
     void attack(Unit* ennemi);
 
-     /**
+    /**
      *   Moves the unit on X and Y by the amounts given in parameters
      *   @param moveX : float in [-1;1] 1 = right, -1 = left
      *   @param moveY : float in [-1;1] 1 = down, -1 = up
      */
     virtual void move(float moveX, float moveY) = 0;
+
+    /**
+     *  @return the posX of the unit
+     */
+    int getPosX();
+
+    /**
+     *  @return the posY of the unit
+     */
+    int getPosY();
 };
 
 #endif
