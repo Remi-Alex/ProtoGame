@@ -24,7 +24,7 @@ InputHandler::~InputHandler() {
 	// 		delete commands[i];
 	// 	}
 	// }
-	// delete commands;
+	delete commands;
 }
 
 void InputHandler::handleInput(SDL_Event e) {

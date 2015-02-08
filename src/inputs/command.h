@@ -9,7 +9,7 @@
 
 #include "../model/player.h"
 
-#define SPEED 1
+#define SPEED 3
 
 class Command {
 	public:
