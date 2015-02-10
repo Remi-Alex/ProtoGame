@@ -5,7 +5,7 @@
 //  Copyright (c) 2015 Remi&Alex. All rights reserved.
 
 #include "movementCommand.h"
-#include "CommandTypes.h"
+#include "commandTypes.h"
 
 MovementCommand::MovementCommand(Player* p) : player(p) {}
 
