@@ -11,6 +11,17 @@
 #include "window.h"
 #include "LTexture.h"
 
+typedef enum Directions {
+	S,
+	SW,
+	W,
+	NW,
+	N,
+	NE,
+	E,
+	SE
+} Directions;
+
 class GraphicUnit {
 	public:
 		// ----- Member(s)
@@ -30,9 +41,15 @@ class GraphicUnit {
 		Unit* unit;
 		Window* window;
 		LTexture texture;
-		SDL_Rect gSpriteClips[4];
 		bool loaded;
+		int x;
+		int y;
+		int width;
+		int height;
+		static const int NB_FRAMES = 8;
+		Directions lastDirection;
 		// ----- Function(s)
+		Directions chooseFrame();
 };
 
 #endif

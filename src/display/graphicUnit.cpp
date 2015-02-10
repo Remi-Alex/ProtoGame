@@ -6,45 +6,55 @@
 
 #include "graphicUnit.h"
 
-GraphicUnit::GraphicUnit(Unit* u, Window* w) : unit(u), window(w), texture(w), loaded(false) {
+GraphicUnit::GraphicUnit(Unit* u, Window* w) : unit(u), window(w), texture(w), loaded(false), x(u->getPosX()), y(u->getPosY()),
+	width(90), height(140), lastDirection(S) {
 	loaded = texture.loadFromFile("img/spriteSheet.png");
-	gSpriteClips[ 0 ].x =   0;
-	gSpriteClips[ 0 ].y =   0;
-	gSpriteClips[ 0 ].w =  64;
-	gSpriteClips[ 0 ].h = 205;
-
-	gSpriteClips[ 1 ].x =  64;
-	gSpriteClips[ 1 ].y =   0;
-	gSpriteClips[ 1 ].w =  64;
-	gSpriteClips[ 1 ].h = 205;
-
-	gSpriteClips[ 2 ].x = 128;
-	gSpriteClips[ 2 ].y =   0;
-	gSpriteClips[ 2 ].w =  64;
-	gSpriteClips[ 2 ].h = 205;
-
-	gSpriteClips[ 3 ].x = 196;
-	gSpriteClips[ 3 ].y =   0;
-	gSpriteClips[ 3 ].w =  64;
-	gSpriteClips[ 3 ].h = 205;
 }
 
 void GraphicUnit::render() {
-	static int frame = 0;
+	Directions frame = chooseFrame();
 	if(loaded) {
-		SDL_Rect* currentClip = &gSpriteClips[ frame / 4 ];
-		texture.render(unit->getPosX(), unit->getPosY(), currentClip );
+		SDL_Rect currentClip;
+		currentClip = {frame * width, 0, width, height};
+		texture.render(unit->getPosX(), unit->getPosY(), &currentClip );
 	} else {
 		SDL_SetRenderDrawColor(window->getGRenderer(), 0x00, 0x7C, 0x4E, 0x00); 
-		SDL_Rect outlineRect = {unit->getPosX(), unit->getPosY(), 100, 100};
+		SDL_Rect outlineRect = {unit->getPosX(), unit->getPosY(), 90, 140};
 		SDL_RenderDrawRect(window->getGRenderer(), &outlineRect);
 	}
+	x = unit->getPosX();
+	y = unit->getPosY();
+	lastDirection = frame;
+}
 
-	//++frame;
-
-	//Cycle animation
-	if(frame / 4 >= 4)
-	{
-    	frame = 0;
+Directions GraphicUnit::chooseFrame() {
+	int unitX = unit->getPosX();
+	int unitY = unit->getPosY();
+	int difX = x - unitX;
+	int difY = y - unitY;
+	if(difX < 0) { // E
+		if(difY < 0) { // S
+			return SE;
+		} else if(difY > 0) { // N
+			return NE;
+		} else {
+			return E;
+		}
+	} else if(difX) { // W
+		if(difY < 0) { // S
+			return SW;
+		} else if(difY > 0) { // N
+			return NW;
+		} else {
+			return W;
+		}
+	} else { // No vertical movement
+		if(difY < 0) { // S
+			return S;
+		} else if(difY > 0) { // N
+			return N;
+		} else {
+			return lastDirection; // No movement, last position;
+		}
 	}
 }
