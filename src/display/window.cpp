@@ -70,7 +70,7 @@ bool Window::loadMedia(const std::string image)
     bool success = true;
     
     gTexture = loadTexture(image);
-    if( gTexture == NULL )
+    if(gTexture == NULL)
     {
         printf( "Unable to load image %s! SDL Error: %s\n", image.c_str(), SDL_GetError() );
         success = false;

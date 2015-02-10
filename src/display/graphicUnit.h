@@ -9,6 +9,7 @@
 
 #include "../model/unit.h"
 #include "window.h"
+#include "LTexture.h"
 
 class GraphicUnit {
 	public:
@@ -28,6 +29,9 @@ class GraphicUnit {
 		// ----- Member(s)
 		Unit* unit;
 		Window* window;
+		LTexture texture;
+		SDL_Rect gSpriteClips[4];
+		bool loaded;
 		// ----- Function(s)
 };
 

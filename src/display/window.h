@@ -30,7 +30,7 @@ class Window {
          *  @param image the media to be loaded
          *  @return true if it has been correctly loaded
          */
-        bool loadMedia(const std::string image);
+        bool loadMedia(const std::string);
 
         SDL_Texture* loadTexture(const std::string path);
 
@@ -54,6 +54,14 @@ class Window {
         SDL_Renderer* getGRenderer();
 
         SDL_Texture* getGTexture();
+
+        static int getScreenWidth() {
+            return SCREEN_WIDTH;
+        }
+
+        static int getScreenHeight() {
+            return SCREEN_HEIGHT;
+        }
 };
 
 #endif
