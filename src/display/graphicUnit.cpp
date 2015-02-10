@@ -6,12 +6,12 @@
 
 #include "graphicUnit.h"
 
-GraphicUnit::GraphicUnit(Unit* u) : unit(u) {
+GraphicUnit::GraphicUnit(Unit* u, Window* w) : unit(u), window(w) {
 
 }
 
-void GraphicUnit::render(Window* w) {
-	SDL_SetRenderDrawColor( w->getGRenderer(), 0x00, 0x7C, 0x4E, 0x00 ); 
-	SDL_Rect outlineRect = { unit->getPosX(), unit->getPosY(), 100, 100};
-	SDL_RenderDrawRect( w->getGRenderer(), &outlineRect );
+void GraphicUnit::render() {
+	SDL_SetRenderDrawColor(window->getGRenderer(), 0x00, 0x7C, 0x4E, 0x00); 
+	SDL_Rect outlineRect = {unit->getPosX(), unit->getPosY(), 100, 100};
+	SDL_RenderDrawRect(window->getGRenderer(), &outlineRect);
 }

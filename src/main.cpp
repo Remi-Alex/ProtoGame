@@ -18,10 +18,10 @@ void gameLoop(Window w) {
 	SDL_Event e;
 	InputHandler ih;
 
-	Renderer* r = &Renderer::getInstance(&w);
+	Renderer* r = &Renderer::getInstance();
 
 	Player p;
-	GraphicUnit gu(&p);
+	GraphicUnit gu(&p, &w);
 	r->addUnit(&gu);
 
 	MovementCommand mc(&p);

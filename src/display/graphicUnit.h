@@ -13,20 +13,21 @@
 class GraphicUnit {
 	public:
 		// ----- Member(s)
-		Unit* unit;
 		// ----- Function(s)
 		/**
 		 *	Constructor
 		 */
-		GraphicUnit(Unit* u);
+		GraphicUnit(Unit*, Window*);
 
 		/**
 		 *	Used to render an Unit
 		 */
-		void render(Window*);
+		void render();
 
 	private:
 		// ----- Member(s)
+		Unit* unit;
+		Window* window;
 		// ----- Function(s)
 };
 

@@ -19,8 +19,8 @@ class Renderer {
 		 *	Creates a static and unique instance of renderer and returns it
 		 *	return the unique instance of class Renderer
 		 */
-		static Renderer& getInstance(Window* w) {
-			static Renderer	instance(w);
+		static Renderer& getInstance() {
+			static Renderer	instance;
 			return instance;
 		}
 
@@ -45,11 +45,10 @@ class Renderer {
 
 	private:
 		// ----- Member(s)
-		Window* window;
 		// TODO: Change for GaphicalUnit
 		std::list<GraphicUnit*> units;
 		// ----- Function(s)
-		Renderer(Window* w);
+		Renderer();
 		Renderer(Renderer const&)		= delete;
 		void operator=(Renderer const&)	= delete;
 };

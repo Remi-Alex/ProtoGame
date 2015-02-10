@@ -6,12 +6,12 @@
 
 #include "renderer.h"
 
-Renderer::Renderer(Window* w) : window(w) {}
+Renderer::Renderer() {}
 
 void Renderer::render() {
 	std::list<GraphicUnit*>::iterator it = units.begin();
 	while(it != units.end()) {
-		(*it)->render(window);
+		(*it)->render();
 		++it;
 	}
 }
