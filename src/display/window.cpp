@@ -65,7 +65,7 @@ bool Window::init()
     return success;
 }
 
-bool Window::loadMedia(const std::string image)
+bool Window::loadMedia(const std::string& image)
 {
     bool success = true;
     
@@ -102,7 +102,7 @@ void Window::close()
     SDL_Quit();
 }
 
-SDL_Texture* Window::loadTexture(const std::string path) { 
+SDL_Texture* Window::loadTexture(const std::string& path) { 
     //The final texture 
     SDL_Texture* newTexture = NULL; 
     //Load image at specified path 

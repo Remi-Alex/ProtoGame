@@ -13,8 +13,8 @@ Unit::Unit() : posX(0), posY(0), strength(1), stamina(1), will(1), intelligence(
     this->computeStats();
 }
 
-Unit::Unit(unsigned short strength, unsigned short stamina, unsigned short will, unsigned short intelligence, 
-    unsigned short luck, unsigned short dexterity) 
+Unit::Unit(unsigned short& strength, unsigned short& stamina, unsigned short& will, unsigned short& intelligence, 
+    unsigned short& luck, unsigned short& dexterity) 
 : posX(0), posY(0), strength(strength), stamina(stamina), will(will), intelligence(intelligence), luck(luck), dexterity(dexterity), lifeSteal(0), penetration(0), lifeRegen(0) {
     this->computeStats();
 }
@@ -105,10 +105,10 @@ int Unit::getPosY() {
     return posY;
 }
 
-void Unit::setPosY(int posY) {
+void Unit::setPosY(const int& posY) {
     this->posY = posY;
 }
 
-void Unit::setPosX(int posX) {
+void Unit::setPosX(const int& posX) {
     this->posX = posX;
 }

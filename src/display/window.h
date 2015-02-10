@@ -30,9 +30,9 @@ class Window {
          *  @param image the media to be loaded
          *  @return true if it has been correctly loaded
          */
-        bool loadMedia(const std::string);
+        bool loadMedia(const std::string&);
 
-        SDL_Texture* loadTexture(const std::string path);
+        SDL_Texture* loadTexture(const std::string&);
 
     public :
         /**

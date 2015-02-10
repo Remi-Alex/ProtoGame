@@ -28,7 +28,7 @@ class Player: public Unit {
         // ----- Function(s)
         Player();
         //@Override
-        void move(float moveX, float moveY);
+        void move(const float& moveX, const float& moveY);
 
 };
 

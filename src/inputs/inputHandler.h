@@ -26,12 +26,12 @@ class InputHandler {
 		/**
 		 *	Handles a new even a call the associated command
 		 */
-		void handleInput(SDL_Event);
+		void handleInput(const SDL_Event&);
 
 		/**
 		 *	
 		 */
-		void bind(CommandTypes, Command*);
+		void bind(const CommandTypes&, Command*);
 	protected:
 	private:
 		// ----- Member(s)

@@ -18,7 +18,7 @@ LTexture::~LTexture() {
 	free();
 }
 
-bool LTexture::loadFromFile( std::string path ) {
+bool LTexture::loadFromFile(const std::string& path) {
 	//Get rid of preexisting texture
 	free();
 
@@ -64,22 +64,22 @@ void LTexture::free() {
 	}
 }
 
-void LTexture::setColor( Uint8 red, Uint8 green, Uint8 blue ) {
+void LTexture::setColor(const Uint8& red, const Uint8& green, const Uint8& blue) {
 	//Modulate texture rgb
 	SDL_SetTextureColorMod( mTexture, red, green, blue );
 }
 
-void LTexture::setBlendMode( SDL_BlendMode blending ) {
+void LTexture::setBlendMode(const SDL_BlendMode& blending) {
 	//Set blending function
 	SDL_SetTextureBlendMode( mTexture, blending );
 }
 		
-void LTexture::setAlpha( Uint8 alpha ) {
+void LTexture::setAlpha(const Uint8& alpha) {
 	//Modulate texture alpha
 	SDL_SetTextureAlphaMod( mTexture, alpha );
 }
 
-void LTexture::render( int x, int y, SDL_Rect* clip ) {
+void LTexture::render(const int& x, const int& y, SDL_Rect* clip ) {
 	//Set rendering space and render to screen
 	SDL_Rect renderQuad = { x, y, mWidth, mHeight };
 

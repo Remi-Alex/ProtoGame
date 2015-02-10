@@ -27,7 +27,7 @@ InputHandler::~InputHandler() {
 	delete commands;
 }
 
-void InputHandler::handleInput(SDL_Event e) {
+void InputHandler::handleInput(const SDL_Event& e) {
 	CommandTypes ct;
 	switch(e.key.keysym.sym) {
 		case SDLK_UP:
@@ -57,6 +57,6 @@ void InputHandler::handleInput(SDL_Event e) {
 	}
 }
 
-void InputHandler::bind(CommandTypes ct, Command* c) {
+void InputHandler::bind(const CommandTypes& ct, Command* c) {
 	commands[ct] = c;
 }

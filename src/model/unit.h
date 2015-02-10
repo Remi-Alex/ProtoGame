@@ -138,7 +138,7 @@ class Unit {
      *  @param luck         the amount of luck given to the unit
      *  @param dexterity    the amount of dexterity given to the unit
      */
-    Unit(unsigned short strength, unsigned short stamina, unsigned short will, unsigned short intelligence, unsigned short luck, unsigned short dexterity);
+    Unit(unsigned short& strength, unsigned short& stamina, unsigned short& will, unsigned short& intelligence, unsigned short& luck, unsigned short& dexterity);
     
     /**
      *  Used to attack the ennemi unit given in parameter
@@ -151,7 +151,7 @@ class Unit {
      *   @param moveX : float in [-1;1] 1 = right, -1 = left
      *   @param moveY : float in [-1;1] 1 = down, -1 = up
      */
-    virtual void move(float moveX, float moveY) = 0;
+    virtual void move(const float& moveX, const float& moveY) = 0;
 
     /**
      *  @return the posX of the unit
@@ -166,12 +166,12 @@ class Unit {
     /**
      *  @param posY the new posY of the unit
      */
-    void setPosY(int posY);
+    void setPosY(const int& posY);
 
     /**
      *  @param posX the new posX of the unit
      */
-    void setPosX(int posX);
+    void setPosX(const int& posX);
 };
 
 #endif

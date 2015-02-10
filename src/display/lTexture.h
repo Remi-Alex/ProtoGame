@@ -25,22 +25,22 @@ class LTexture {
 		~LTexture();
 
 		//Loads image at specified path
-		bool loadFromFile( std::string path );
+		bool loadFromFile(const std::string& path);
 
 		//Deallocates texture
 		void free();
 
 		//Set color modulation
-		void setColor( Uint8 red, Uint8 green, Uint8 blue );
+		void setColor(const Uint8& red, const Uint8& green, const Uint8& blue);
 
 		//Set blending
-		void setBlendMode( SDL_BlendMode blending );
+		void setBlendMode(const SDL_BlendMode& blending);
 
 		//Set alpha modulation
-		void setAlpha( Uint8 alpha );
+		void setAlpha(const Uint8& alpha);
 		
 		//Renders texture at given point
-		void render( int x, int y, SDL_Rect* clip = NULL );
+		void render(const int& x, const int& y, SDL_Rect* clip = NULL );
 
 		//Gets image dimensions
 		int getWidth();
