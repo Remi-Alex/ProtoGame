@@ -8,7 +8,8 @@
 #include <stdlib.h>
 #include <iostream>
 
-int i, j = 0;
+/** static members **/
+std::vector<MouseElement*> InputHandler::mouseElements;
 
 InputHandler::InputHandler() {
 	commands = new Command* [NB_COMMAND_TYPES];
@@ -59,6 +60,13 @@ void InputHandler::handleInput(const SDL_Event& e) {
 	} else if (e.type == SDL_MOUSEMOTION || e.type == SDL_MOUSEBUTTONDOWN || e.type == SDL_MOUSEBUTTONUP) {
 		int x, y;
         SDL_GetMouseState(&x, &y);
+
+        std::vector<MouseElement*>::iterator it = InputHandler::mouseElements.begin();
+        while(it != InputHandler::mouseElements.end()) {
+        	// Change depending on type of event
+        	(*it)->mouseClicked();
+        	++it;
+        }
 	}
 }
 
