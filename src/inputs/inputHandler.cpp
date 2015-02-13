@@ -28,32 +28,36 @@ InputHandler::~InputHandler() {
 }
 
 void InputHandler::handleInput(const SDL_Event& e) {
-	CommandTypes ct;
-	switch(e.key.keysym.sym) {
-		case SDLK_UP:
-			ct = UP_ARROW;
-			break;
+	if(e.type == SDL_KEYDOWN) {
+		CommandTypes ct;
+		switch(e.key.keysym.sym) {
+			case SDLK_UP:
+				ct = UP_ARROW;
+				break;
 
-		case SDLK_DOWN:
-			ct = DOWN_ARROW;
-			break;
+			case SDLK_DOWN:
+				ct = DOWN_ARROW;
+				break;
 
-		case SDLK_LEFT:
-			ct = LEFT_ARROW;
-			break;
+			case SDLK_LEFT:
+				ct = LEFT_ARROW;
+				break;
 
-		case SDLK_RIGHT:
-			ct = RIGHT_ARROW;
-			break;
+			case SDLK_RIGHT:
+				ct = RIGHT_ARROW;
+				break;
 
-		default:
-			ct = OTHER;
-			break;
-	}
+			default:
+				ct = OTHER;
+				break;
+		}
 
-	if(ct != OTHER) {
-		Command* c = commands[ct];
-		if(c != NULL) c->execute(&ct);
+		if(ct != OTHER) {
+			Command* c = commands[ct];
+			if(c != NULL) c->execute(&ct);
+		}
+	} else {
+		
 	}
 }
 

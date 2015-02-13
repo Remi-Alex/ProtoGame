@@ -9,7 +9,7 @@
 
 #include "../model/unit.h"
 #include "window.h"
-#include "LTexture.h"
+#include "lTexture.h"
 
 typedef enum Directions {
 	S,

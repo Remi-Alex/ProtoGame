@@ -42,7 +42,7 @@ void gameLoop(Window w) {
 			//User requests quit
 			if(e.type == SDL_QUIT) {
 				quit = true;
-			} else if(e.type == SDL_KEYDOWN) {
+			} else {
 				ih.handleInput(e);
 			}
 		}
