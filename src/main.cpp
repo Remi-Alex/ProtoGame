@@ -23,6 +23,7 @@ void gameLoop(Window w) {
 	Player p;
 	GraphicUnit gu(&p, &w);
 	r->addUnit(&gu);
+	InputHandler::AddMouseElement(&gu);
 
 	MovementCommand mc(&p);
 	ih.bind(UP_ARROW, &mc);

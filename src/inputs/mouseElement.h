@@ -11,9 +11,9 @@ class MouseElement {
 	public:
 		// ----- Member(s)
 		// ----- Function(s)
-		MouseElement();
+		MouseElement() {}
 
-		~MouseElement();
+		~MouseElement() {}
 
 		/**
 		 *	Handles a new even a call the associated command

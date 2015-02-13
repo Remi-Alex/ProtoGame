@@ -5,6 +5,7 @@
 //  Copyright (c) 2015 Remi&Alex. All rights reserved.
 
 #include "graphicUnit.h"
+#include <iostream>
 
 GraphicUnit::GraphicUnit(Unit* u, Window* w) : unit(u), window(w), texture(w), loaded(false), x(u->getPosX()), y(u->getPosY()),
 	width(90), height(140), lastDirection(S) {
@@ -57,4 +58,8 @@ Directions GraphicUnit::chooseFrame() {
 			return lastDirection; // No movement, last position;
 		}
 	}
+}
+
+void GraphicUnit::mouseClicked() {
+	std::cout << "test" << std::endl;
 }

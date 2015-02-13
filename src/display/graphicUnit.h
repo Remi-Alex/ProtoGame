@@ -10,6 +10,7 @@
 #include "../model/unit.h"
 #include "window.h"
 #include "lTexture.h"
+#include "../inputs/mouseElement.h"
 
 typedef enum Directions {
 	S,
@@ -22,7 +23,7 @@ typedef enum Directions {
 	SE
 } Directions;
 
-class GraphicUnit {
+class GraphicUnit : public MouseElement {
 	public:
 		// ----- Member(s)
 		// ----- Function(s)
@@ -35,6 +36,7 @@ class GraphicUnit {
 		 *	Used to render an Unit
 		 */
 		void render();
+		void mouseClicked(void);
 
 	private:
 		// ----- Member(s)

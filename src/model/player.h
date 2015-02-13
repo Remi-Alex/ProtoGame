@@ -14,7 +14,7 @@
  *  @class Player
  *  
  */
-class Player: public Unit {
+class Player : public Unit {
     private :
         // ----- Member(s)
         
@@ -29,7 +29,8 @@ class Player: public Unit {
         Player();
         //@Override
         void move(const float& moveX, const float& moveY);
-
+        //@Override
+        void mouseClicked(void);
 };
 
 #endif
