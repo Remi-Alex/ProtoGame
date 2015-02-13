@@ -56,8 +56,9 @@ void InputHandler::handleInput(const SDL_Event& e) {
 			Command* c = commands[ct];
 			if(c != NULL) c->execute(&ct);
 		}
-	} else {
-		
+	} else if (e.type == SDL_MOUSEMOTION || e.type == SDL_MOUSEBUTTONDOWN || e.type == SDL_MOUSEBUTTONUP) {
+		int x, y;
+        SDL_GetMouseState(&x, &y);
 	}
 }
 
