@@ -19,6 +19,11 @@ class MouseElement {
 		 *	Handles a new even a call the associated command
 		 */
 		virtual void mouseClicked(void) = 0;
+
+		/**
+		 *	Test if the MouseElement object contains a point of coordinates x,y
+		 */
+		virtual bool contain(int, int) = 0;
 	protected:
 	private:
 		// ----- Member(s)

@@ -8,7 +8,7 @@
 #include <iostream>
 
 GraphicUnit::GraphicUnit(Unit* u, Window* w) : unit(u), window(w), texture(w), loaded(false), x(u->getPosX()), y(u->getPosY()),
-	width(90), height(140), lastDirection(S) {
+	width(WIDTH), height(HEIGHT), lastDirection(S) {
 	loaded = texture.loadFromFile("img/spriteSheet.png");
 }
 
@@ -20,7 +20,7 @@ void GraphicUnit::render() {
 		texture.render(unit->getPosX(), unit->getPosY(), &currentClip );
 	} else {
 		SDL_SetRenderDrawColor(window->getGRenderer(), 0x00, 0x7C, 0x4E, 0x00); 
-		SDL_Rect outlineRect = {unit->getPosX(), unit->getPosY(), 90, 140};
+		SDL_Rect outlineRect = {unit->getPosX(), unit->getPosY(), width, height};
 		SDL_RenderDrawRect(window->getGRenderer(), &outlineRect);
 	}
 	x = unit->getPosX();
@@ -62,4 +62,10 @@ Directions GraphicUnit::chooseFrame() {
 
 void GraphicUnit::mouseClicked() {
 	std::cout << "test" << std::endl;
+}
+
+bool GraphicUnit::contain(int x, int y) {
+	int posX = unit->getPosX();
+	int posY = unit->getPosY();
+	return x >= posX && x <= posX + width && y >= posY && y <= posY + height;
 }

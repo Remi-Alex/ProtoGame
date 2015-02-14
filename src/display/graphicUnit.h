@@ -36,7 +36,11 @@ class GraphicUnit : public MouseElement {
 		 *	Used to render an Unit
 		 */
 		void render();
+
+		//@Override
 		void mouseClicked(void);
+		//@Override
+		bool contain(int, int);
 
 	private:
 		// ----- Member(s)
@@ -49,6 +53,8 @@ class GraphicUnit : public MouseElement {
 		int width;
 		int height;
 		static const int NB_FRAMES = 8;
+		static const int WIDTH = 90;
+		static const int HEIGHT = 140;
 		Directions lastDirection;
 		// ----- Function(s)
 		Directions chooseFrame();
