@@ -10,6 +10,7 @@
 #else
 #include <SDL2/SDL_image.h>
 #endif
+#include <SDL2/SDL_ttf.h>
 
 Window::Window() {
     // Initialize variables
@@ -57,6 +58,12 @@ bool Window::init()
                     printf( "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError() ); 
                     success = false; 
                 }
+
+                if(TTF_Init() == -1){
+                    printf( "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError() );
+                    success = false;
+                }
+
                 loadMedia("img/hello_world.bmp");
             }
         }
@@ -98,6 +105,7 @@ void Window::close()
     }
     
     //Quit SDL subsystems
+    TTF_Quit();
     IMG_Quit();
     SDL_Quit();
 }

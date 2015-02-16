@@ -8,7 +8,7 @@ CC=g++ -std=c++11
 NAME=ProtoGame
 NAME_TEST=Tests
 CCFLAGS=-Wall -g
-LIBS=-lSDL2 -lSDL2_image
+LIBS=-lSDL2 -lSDL2_image -lSDL2_TTF
 LIBS_TEST=lib/libUnitTest++.a $(LIBS)
 
 all: test game

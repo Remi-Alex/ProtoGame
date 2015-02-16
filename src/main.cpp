@@ -5,9 +5,12 @@
 //  Copyright (c) 2015 Remi&Alex. All rights reserved.
 
 #include <stdio.h>
+#include <string>
 #include "display/window.h"
 #include "display/renderer.h"
 #include "display/graphicUnit.h"
+#include "display/text.h"
+#include "display/textManager.h"
 #include "model/player.h"
 #include "inputs/inputHandler.h"
 #include "inputs/movementCommand.h"
@@ -24,6 +27,11 @@ void gameLoop(Window w) {
 	GraphicUnit gu(&p, &w);
 	r->addUnit(&gu);
 	InputHandler::AddMouseElement(&gu);
+
+	std::string tTest = "test";
+	SDL_Color tColor = {0, 0, 0};
+	Text text(tTest, tColor);
+	TextManager::addText(text);
 
 	MovementCommand mc(&p);
 	ih.bind(UP_ARROW, &mc);
@@ -49,6 +57,7 @@ void gameLoop(Window w) {
 		}
 
 		r->render();
+		TextManager::render(&w);
 
 		SDL_RenderPresent(w.getGRenderer());
 	}
