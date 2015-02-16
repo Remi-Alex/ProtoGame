@@ -8,6 +8,7 @@
 #define text_h
 
 #include "window.h"
+#include "lTexture.h"
 #include <string>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
@@ -15,16 +16,16 @@
 class Text {
 	public:
 		// ----- Member(s)
-		Text(std::string&, SDL_Color);
+		Text(std::string&, SDL_Color, Window*);
 		~Text();
 		// ----- Function(s)
-		void render(Window*);
+		void render();
 	private:
 		// ----- Member(s)
 		std::string text;
 		SDL_Color color;
-		TTF_Font* gFont;
-		SDL_Texture* mTexture;
+		static TTF_Font* gFont;
+		LTexture mTexture;
 		// ----- Function(s)
 };
 

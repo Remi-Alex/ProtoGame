@@ -8,10 +8,10 @@
 
 std::vector<Text> TextManager::texts;
 
-void TextManager::render(Window* window) {
+void TextManager::render() {
 	std::vector<Text>::iterator it = TextManager::texts.begin();
 	while(it != TextManager::texts.end()) {
-		it->render(window);
+		it->render();
 		++it;
 	}
 }

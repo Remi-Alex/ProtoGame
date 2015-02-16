@@ -16,7 +16,7 @@ class TextManager {
 	public:
 		// ----- Member(s)
 		// ----- Function(s)
-		static void render(Window*);
+		static void render();
 		static void addText(const Text&);
 	private:
 		// ----- Member(s)

@@ -15,6 +15,7 @@
 #endif
 #include <string>
 #include "window.h"
+#include <SDL2/SDL_ttf.h>
 
 class LTexture {
 	public:
@@ -41,6 +42,8 @@ class LTexture {
 		
 		//Renders texture at given point
 		void render(const int& x, const int& y, SDL_Rect* clip = NULL );
+
+		void loadFromText(TTF_Font*, const std::string&, SDL_Color);
 
 		//Gets image dimensions
 		int getWidth();
