@@ -8,9 +8,9 @@
 
 TTF_Font* Text::gFont = NULL;
 
-Text::Text(std::string& t, SDL_Color c, Window* w) : text(t), color(c), mTexture(w) {
+Text::Text(std::string& t, SDL_Color c, Window* w, const int& x, const int& y, const int& size) : text(t), color(c), mTexture(w), x(x), y(y), size(size) {
 	if(Text::gFont == NULL) {
-		Text::gFont = TTF_OpenFont("fonts/lazy.ttf", 28);
+		Text::gFont = TTF_OpenFont("fonts/lazy.ttf", size);
 		if(Text::gFont == NULL) {
 			printf("Unable to create font! SDL Error: %s\n", SDL_GetError());
 		} else {
@@ -24,5 +24,5 @@ Text::~Text() {
 }
 
 void Text::render() {
-	mTexture.render(0, 0);
+	mTexture.render(x, y);
 }

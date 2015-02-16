@@ -30,7 +30,7 @@ void gameLoop(Window w) {
 
 	std::string tTest = "test";
 	SDL_Color tColor = {0, 0, 0};
-	Text text(tTest, tColor, &w);
+	Text text(tTest, tColor, &w, 100, 200, 12);
 	TextManager::addText(text);
 
 	MovementCommand mc(&p);

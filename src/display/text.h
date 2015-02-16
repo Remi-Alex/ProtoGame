@@ -16,7 +16,7 @@
 class Text {
 	public:
 		// ----- Member(s)
-		Text(std::string&, SDL_Color, Window*);
+		Text(std::string&, SDL_Color, Window*, const int&, const int&, const int&);
 		~Text();
 		// ----- Function(s)
 		void render();
@@ -26,6 +26,7 @@ class Text {
 		SDL_Color color;
 		static TTF_Font* gFont;
 		LTexture mTexture;
+		int x, y, size;
 		// ----- Function(s)
 };
 
