@@ -13,6 +13,8 @@ Text::Text(std::string& t, SDL_Color c, Window* w) : text(t), color(c), mTexture
 		Text::gFont = TTF_OpenFont("fonts/lazy.ttf", 28);
 		if(Text::gFont == NULL) {
 			printf("Unable to create font! SDL Error: %s\n", SDL_GetError());
+		} else {
+			mTexture.loadFromText(gFont, text, color);
 		}
 	}
 }
