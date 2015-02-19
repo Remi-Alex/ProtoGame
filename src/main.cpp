@@ -15,6 +15,7 @@
 #include "inputs/inputHandler.h"
 #include "inputs/movementCommand.h"
 #include "inputs/commandTypes.h"
+#include "sound/Sound.h"
 
 void gameLoop(Window w) {
 	bool quit = false;
@@ -38,6 +39,9 @@ void gameLoop(Window w) {
 	ih.bind(DOWN_ARROW, &mc);
 	ih.bind(LEFT_ARROW, &mc);
 	ih.bind(RIGHT_ARROW, &mc);
+
+	Sound s("sound/beat.wav");
+	s.play();
 
 	// Game loop
 	while(!quit) {

@@ -1,4 +1,4 @@
-PACKAGES=display inputs model
+PACKAGES=display inputs model sound
 SRC= $(wildcard $(addsuffix /*.cpp,$(PACKAGES)))
 SRC_GAME= $(SRC) $(wildcard *.cpp) 
 SRC_TEST=test/test.cpp $(SRC)
@@ -8,7 +8,7 @@ CC=g++ -std=c++11
 NAME=ProtoGame
 NAME_TEST=Tests
 CCFLAGS=-Wall -g
-LIBS=-lSDL2 -lSDL2_image -lSDL2_TTF
+LIBS=-lSDL2 -lSDL2_image -lSDL2_TTF -lSDL2_mixer
 LIBS_TEST=lib/libUnitTest++.a $(LIBS)
 
 all: test game
