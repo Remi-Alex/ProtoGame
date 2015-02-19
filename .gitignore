@@ -8,5 +8,8 @@
 #Test stuff
 src/lib
 
+#Linux stuff
+*~
+
 ProtoGame
 Tests
