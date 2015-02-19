@@ -40,7 +40,7 @@ void gameLoop(Window w) {
 	ih.bind(LEFT_ARROW, &mc);
 	ih.bind(RIGHT_ARROW, &mc);
 
-	Sound s("sound/beat.wav");
+	Sound s("sound/beat.wav", EFFECT);
 	s.play();
 
 	// Game loop

@@ -11,6 +11,11 @@
 #include <string>
 #include <SDL2/SDL_mixer.h>
 
+typedef enum SoundTypes {
+	MUSIC,
+	EFFECT
+} SoundTypes;
+
 /**
 *  @class Sound
 *  
@@ -19,6 +24,8 @@ class Sound {
 	private :
 		// ----- Member(s)
 		Mix_Music *gMusic;
+		Mix_Chunk *gEffect;
+		SoundTypes type;
 		// ----- Function(s)
 
 	protected :
@@ -27,7 +34,8 @@ class Sound {
 	public :
 		// ----- Member(s)
 		// ----- Function(s)
-		Sound(const std::string&);
+		Sound(const std::string&, const SoundTypes& type = MUSIC);
+		~Sound();
 		void play(void);
 };
 
