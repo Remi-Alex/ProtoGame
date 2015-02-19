@@ -8,7 +8,7 @@ CC=g++ -std=c++11
 NAME=ProtoGame
 NAME_TEST=Tests
 CCFLAGS=-Wall -g
-LIBS=-lSDL2 -lSDL2_image -lSDL2_TTF -lSDL2_mixer
+LIBS=-lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
 LIBS_TEST=lib/libUnitTest++.a $(LIBS)
 
 all: test game
@@ -17,7 +17,7 @@ game: $(OBJ)
 	@echo Compiling game...
 	$(CC) $(OBJ) -o $(NAME) $(LIBS)
 
-test: $(LIBS_TEST) $(OBJ_TEST)
+test: $(OBJ_TEST)
 	@echo Linking $(NAME_TEST)...
 	@$(CC) -o $(NAME_TEST) $(OBJ_TEST) $(LIBS_TEST)
 	@echo Running unit tests...
