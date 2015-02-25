@@ -27,6 +27,9 @@ class Unit {
     int posX;
     int posY;
 
+    int width;
+    int height;
+
     unsigned short strength;
     unsigned short stamina;
     unsigned short dexterity;

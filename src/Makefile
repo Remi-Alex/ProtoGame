@@ -1,4 +1,4 @@
-PACKAGES=display inputs model sound
+PACKAGES=display inputs model sound util
 SRC= $(wildcard $(addsuffix /*.cpp,$(PACKAGES)))
 SRC_GAME= $(SRC) $(wildcard *.cpp) 
 SRC_TEST=test/test.cpp $(SRC)

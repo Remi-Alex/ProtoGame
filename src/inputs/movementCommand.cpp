@@ -7,17 +7,16 @@
 #include "movementCommand.h"
 #include "commandTypes.h"
 
-MovementCommand::MovementCommand(Player* p) : player(p) {}
+MovementCommand::MovementCommand(Player* p, Directions direction) : player(p), direction(direction){}
 
-void MovementCommand::execute(void* param) {
-	int direction = *((int*) param);
-	if(direction == UP_ARROW) {
+void MovementCommand::execute() {
+	if(direction == N) {
 		player->setPosY(player->getPosY() - SPEED);
-	} else if(direction == DOWN_ARROW) {
+	} else if(direction == S) {
 		player->setPosY(player->getPosY() + SPEED);
-	} else if(direction == LEFT_ARROW) {
+	} else if(direction == W) {
 		player->setPosX(player->getPosX() - SPEED);
-	} else if(direction == RIGHT_ARROW) {
+	} else if(direction == E) {
 		player->setPosX(player->getPosX() + SPEED);
 	}
 }

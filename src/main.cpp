@@ -34,11 +34,14 @@ void gameLoop(Window w) {
 	Text text(tTest, tColor, &w, 100, 200, 12);
 	TextManager::addText(text);
 
-	MovementCommand mc(&p);
-	ih.bind(UP_ARROW, &mc);
-	ih.bind(DOWN_ARROW, &mc);
-	ih.bind(LEFT_ARROW, &mc);
-	ih.bind(RIGHT_ARROW, &mc);
+	MovementCommand movUp(&p, N);
+	MovementCommand movDo(&p, S);
+	MovementCommand movLe(&p, W);
+	MovementCommand movRi(&p, E);
+	ih.bind(UP_ARROW, &movUp);
+	ih.bind(DOWN_ARROW, &movDo);
+	ih.bind(LEFT_ARROW, &movLe);
+	ih.bind(RIGHT_ARROW, &movRi);
 
 	Sound s("sound/beat.wav", EFFECT);
 	s.play();

@@ -28,7 +28,9 @@ InputHandler::~InputHandler() {
 	delete commands;
 }
 
-void InputHandler::handleInput(const SDL_Event& e) {
+std::vector<Command*> InputHandler::handleInput(const SDL_Event& e) {
+	std::vector<Command*> cmdsToExe;
+
 	if(e.type == SDL_KEYDOWN) {
 		CommandTypes ct;
 		switch(e.key.keysym.sym) {
@@ -72,6 +74,7 @@ void InputHandler::handleInput(const SDL_Event& e) {
 			++it;
         }
 	}
+	return cmdsToExe;
 }
 
 void InputHandler::bind(const CommandTypes& ct, Command* c) {

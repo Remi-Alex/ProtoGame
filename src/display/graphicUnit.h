@@ -11,17 +11,7 @@
 #include "window.h"
 #include "lTexture.h"
 #include "../inputs/mouseElement.h"
-
-typedef enum Directions {
-	S,
-	SW,
-	W,
-	NW,
-	N,
-	NE,
-	E,
-	SE
-} Directions;
+#include "../util/directions.h"
 
 class GraphicUnit : public MouseElement {
 	public:
