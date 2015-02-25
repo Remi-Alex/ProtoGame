@@ -59,9 +59,10 @@ void gameLoop(Window w) {
 			if(e.type == SDL_QUIT) {
 				quit = true;
 			} else {
-				ih.handleInput(e);
+				ih.handleMouse(e);
 			}
 		}
+		ih.handleKeyboard();
 
 		r->render();
 		TextManager::render();

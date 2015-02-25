@@ -28,7 +28,9 @@ class InputHandler {
 		/**
 		 *	Handles a new even a call the associated command
 		 */
-		std::vector<Command*> handleInput(const SDL_Event&);
+		void handleMouse(const SDL_Event&);
+
+		void handleKeyboard();
 
 		/**
 		 *	Binds a command to a command type

@@ -28,38 +28,9 @@ InputHandler::~InputHandler() {
 	delete commands;
 }
 
-std::vector<Command*> InputHandler::handleInput(const SDL_Event& e) {
-	std::vector<Command*> cmdsToExe;
-
-	if(e.type == SDL_KEYDOWN) {
-		CommandTypes ct;
-		switch(e.key.keysym.sym) {
-			case SDLK_UP:
-				ct = UP_ARROW;
-				break;
-
-			case SDLK_DOWN:
-				ct = DOWN_ARROW;
-				break;
-
-			case SDLK_LEFT:
-				ct = LEFT_ARROW;
-				break;
-
-			case SDLK_RIGHT:
-				ct = RIGHT_ARROW;
-				break;
-
-			default:
-				ct = OTHER;
-				break;
-		}
-
-		if(ct != OTHER) {
-			Command* c = commands[ct];
-			if(c != NULL) c->execute(&ct);
-		}
-	} else if (e.type == SDL_MOUSEMOTION || e.type == SDL_MOUSEBUTTONDOWN || e.type == SDL_MOUSEBUTTONUP) {
+void InputHandler::handleMouse(const SDL_Event& e) {
+	
+	if (e.type == SDL_MOUSEMOTION || e.type == SDL_MOUSEBUTTONDOWN || e.type == SDL_MOUSEBUTTONUP) {
 		int x, y;
 		SDL_GetMouseState(&x, &y);
 
@@ -74,7 +45,21 @@ std::vector<Command*> InputHandler::handleInput(const SDL_Event& e) {
 			++it;
         }
 	}
-	return cmdsToExe;
+}
+
+void InputHandler::handleKeyboard() {
+	//Set texture based on current keystate 
+	const Uint8* currentKeyStates = SDL_GetKeyboardState( NULL ); 
+	
+	if(currentKeyStates[SDL_SCANCODE_UP]) { 
+		commands[UP_ARROW]->execute();
+	} if(currentKeyStates[SDL_SCANCODE_DOWN]) { 
+		commands[DOWN_ARROW]->execute();
+	} if(currentKeyStates[SDL_SCANCODE_LEFT]) { 
+		commands[LEFT_ARROW]->execute();
+	} if(currentKeyStates[SDL_SCANCODE_RIGHT]) { 
+		commands[RIGHT_ARROW]->execute();
+	}
 }
 
 void InputHandler::bind(const CommandTypes& ct, Command* c) {
