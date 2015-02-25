@@ -15,7 +15,7 @@ class Command {
 		// ----- Function(s)
 		Command() {}
 		virtual ~Command() {}
-		virtual void execute() = 0;
+		virtual void execute(void*) = 0;
 	protected:
 	private:
 };

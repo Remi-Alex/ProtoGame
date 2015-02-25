@@ -8,23 +8,24 @@
 #define movement_command_h
 
 #include "command.h"
-#include "../util/directions.h"
+#include <math.h>
 
 #define SPEED 3
+#define X 0
+#define Y 1
 
 class MovementCommand : public Command {
 	public:
 		// ----- Member(s)
 		// ----- Function(s)
-		MovementCommand(Player* p, Directions direction);
+		MovementCommand(Player* p);
 
 		~MovementCommand() {}
 
-		void execute();
+		void execute(void*);
 	protected:
 	private:
 		Player* player;
-		Directions direction;
 };
 
 #endif

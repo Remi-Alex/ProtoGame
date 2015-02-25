@@ -47,19 +47,33 @@ void InputHandler::handleMouse(const SDL_Event& e) {
 	}
 }
 
-void InputHandler::handleKeyboard() {
+signed char* InputHandler::handleKeyboard() {
 	//Set texture based on current keystate 
 	const Uint8* currentKeyStates = SDL_GetKeyboardState( NULL ); 
 	
+	//Direction table
+	// X => -1 Left, 1 Right
+	// Y => -1 Up, 1 Down
+	signed char* dir = new signed char[2];
+	dir[X] = 0;
+	dir[Y] = 0;
+
 	if(currentKeyStates[SDL_SCANCODE_UP]) { 
-		commands[UP_ARROW]->execute();
-	} if(currentKeyStates[SDL_SCANCODE_DOWN]) { 
-		commands[DOWN_ARROW]->execute();
+		dir[Y]--;
+	} if(currentKeyStates[SDL_SCANCODE_DOWN]) {
+		dir[Y]++;
 	} if(currentKeyStates[SDL_SCANCODE_LEFT]) { 
-		commands[LEFT_ARROW]->execute();
+		dir[X]--;
 	} if(currentKeyStates[SDL_SCANCODE_RIGHT]) { 
-		commands[RIGHT_ARROW]->execute();
+		dir[X]++;
 	}
+
+	return dir;
+}
+
+void InputHandler::executeMovement(signed char* dir){
+	commands[MOVE]->execute(dir);
+	delete[] dir;
 }
 
 void InputHandler::bind(const CommandTypes& ct, Command* c) {

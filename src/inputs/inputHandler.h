@@ -14,6 +14,7 @@
 #include "../model/unit.h"
 #include <SDL2/SDL.h>
 #include <vector>
+#include "movementCommand.h"
 
 #define NB_COMMAND_TYPES OTHER
 
@@ -26,11 +27,19 @@ class InputHandler {
 		~InputHandler();
 
 		/**
-		 *	Handles a new even a call the associated command
+		 *	Handles the mouse
 		 */
 		void handleMouse(const SDL_Event&);
 
-		void handleKeyboard();
+		/**
+		 *	Handles the keyboard
+		 */
+		signed char* handleKeyboard();
+
+		/**
+		 *	Executes movementCommands based on a array of directions
+		 */
+		void executeMovement(signed char*);
 
 		/**
 		 *	Binds a command to a command type

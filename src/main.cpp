@@ -34,15 +34,9 @@ void gameLoop(Window w) {
 	Text text(tTest, tColor, &w, 100, 200, 12);
 	TextManager::addText(text);
 
-	MovementCommand movUp(&p, N);
-	MovementCommand movDo(&p, S);
-	MovementCommand movLe(&p, W);
-	MovementCommand movRi(&p, E);
-	ih.bind(UP_ARROW, &movUp);
-	ih.bind(DOWN_ARROW, &movDo);
-	ih.bind(LEFT_ARROW, &movLe);
-	ih.bind(RIGHT_ARROW, &movRi);
-
+	MovementCommand mc(&p);
+	ih.bind(MOVE, &mc);
+	
 	Sound s("sound/beat.wav", EFFECT);
 	s.play();
 
@@ -62,7 +56,9 @@ void gameLoop(Window w) {
 				ih.handleMouse(e);
 			}
 		}
-		ih.handleKeyboard();
+		signed char* dir = ih.handleKeyboard();
+		//Handle collisions
+		ih.executeMovement(dir);
 
 		r->render();
 		TextManager::render();
