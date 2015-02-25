@@ -15,7 +15,7 @@
 #include "inputs/inputHandler.h"
 #include "inputs/movementCommand.h"
 #include "inputs/commandTypes.h"
-#include "sound/Sound.h"
+#include "sound/sound.h"
 
 void gameLoop(Window w) {
 	bool quit = false;
