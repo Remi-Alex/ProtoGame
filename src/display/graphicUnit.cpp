@@ -6,7 +6,6 @@
 
 #include "graphicUnit.h"
 #include <iostream>
-#include <math.h>
 
 GraphicUnit::GraphicUnit(Unit* u, Window* w) : unit(u), window(w), texture(w), loaded(false), x(u->getPosX()), y(u->getPosY()),
 	width(WIDTH), height(HEIGHT), lastDirection(S) {
@@ -21,7 +20,7 @@ void GraphicUnit::render() {
 		texture.render((int) floor(unit->getPosX()), (int) floor(unit->getPosY()), &currentClip );
 	} else {
 		SDL_SetRenderDrawColor(window->getGRenderer(), 0x00, 0x7C, 0x4E, 0x00); 
-		SDL_Rect outlineRect = {(int) floor(unit->getPosX()), (int) floor(unit->getPosY()), width, height};
+		SDL_Rect outlineRect = {(int) unit->getPosX(), (int) unit->getPosY(), width, height};
 		SDL_RenderDrawRect(window->getGRenderer(), &outlineRect);
 	}
 	x = unit->getPosX();
