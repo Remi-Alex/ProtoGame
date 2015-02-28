@@ -10,12 +10,13 @@
 #define unit__h
 
 #include <stdio.h>
+#include "element.h"
 
 /**
  *  @class Unit
  *  Useful comments
  */
-class Unit {
+class Unit : public Element {
     private :
     // ----- Member(s)
     /**
@@ -26,12 +27,6 @@ class Unit {
     // ----- Member(s)
     static const int WIDTH = 90;
     static const int HEIGHT = 140;
-
-    float posX;
-    float posY;
-
-    int width;
-    int height;
 
     unsigned short strength;
     unsigned short stamina;
@@ -158,26 +153,6 @@ class Unit {
      *   @param moveY : float in [-1;1] 1 = down, -1 = up
      */
     virtual void move(const float& moveX, const float& moveY) = 0;
-
-    /**
-     *  @return the posX of the unit
-     */
-    float getPosX();
-
-    /**
-     *  @return the posY of the unit
-     */
-    float getPosY();
-
-    /**
-     *  @param posY the new posY of the unit
-     */
-    void setPosY(const float& posY);
-
-    /**
-     *  @param posX the new posX of the unit
-     */
-    void setPosX(const float& posX);
 
     int getWidth();
 

@@ -9,13 +9,13 @@
 #include <stdlib.h>
 #include <time.h>
 
-Unit::Unit() : posX(0), posY(0), strength(1), stamina(1), will(1), intelligence(1), luck(1), dexterity(1), lifeSteal(0), penetration(0), lifeRegen(0), width(WIDTH), height(HEIGHT) {
+Unit::Unit() : Element(WIDTH, HEIGHT, 0, 0), strength(1), stamina(1), will(1), intelligence(1), luck(1), dexterity(1), lifeSteal(0), penetration(0), lifeRegen(0) {
     this->computeStats();
 }
 
 Unit::Unit(unsigned short& strength, unsigned short& stamina, unsigned short& will, unsigned short& intelligence, 
     unsigned short& luck, unsigned short& dexterity) 
-: posX(0), posY(0), strength(strength), stamina(stamina), will(will), intelligence(intelligence), luck(luck), dexterity(dexterity), lifeSteal(0), penetration(0), lifeRegen(0) {
+: Element(WIDTH, HEIGHT, 0, 0), strength(strength), stamina(stamina), will(will), intelligence(intelligence), luck(luck), dexterity(dexterity), lifeSteal(0), penetration(0), lifeRegen(0) {
     this->computeStats();
 }
 
@@ -95,22 +95,6 @@ void Unit::attack(Unit* ennemi) {
     // deal damages
     ennemi->HP -= damages;
     if(ennemi->HP < 0) ennemi->HP = 0;
-}
-
-float Unit::getPosX() {
-    return posX;
-}
-
-float Unit::getPosY() {
-    return posY;
-}
-
-void Unit::setPosY(const float& posY) {
-    this->posY = posY;
-}
-
-void Unit::setPosX(const float& posX) {
-    this->posX = posX;
 }
 
 int Unit::getWidth() {
