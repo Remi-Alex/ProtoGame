@@ -49,8 +49,8 @@ class Renderer {
 		std::list<GraphicUnit*> units;
 		// ----- Function(s)
 		Renderer();
-		Renderer(Renderer const&)		= delete;
-		void operator=(Renderer const&)	= delete;
+		Renderer(Renderer const&) {}
+		void operator=(Renderer const&)	{}
 };
 
 #endif
