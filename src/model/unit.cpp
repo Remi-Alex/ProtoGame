@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-Unit::Unit() : posX(0), posY(0), strength(1), stamina(1), will(1), intelligence(1), luck(1), dexterity(1), lifeSteal(0), penetration(0), lifeRegen(0) {
+Unit::Unit() : posX(0), posY(0), strength(1), stamina(1), will(1), intelligence(1), luck(1), dexterity(1), lifeSteal(0), penetration(0), lifeRegen(0), width(WIDTH), height(HEIGHT) {
     this->computeStats();
 }
 
@@ -111,4 +111,12 @@ void Unit::setPosY(const float& posY) {
 
 void Unit::setPosX(const float& posX) {
     this->posX = posX;
+}
+
+int Unit::getWidth() {
+    return width;
+}
+
+int Unit::getHeight() {
+    return height;
 }

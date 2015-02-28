@@ -24,6 +24,9 @@ class Unit {
     // ----- Function(s)
     protected :
     // ----- Member(s)
+    static const int WIDTH = 90;
+    static const int HEIGHT = 140;
+
     float posX;
     float posY;
 
@@ -175,6 +178,10 @@ class Unit {
      *  @param posX the new posX of the unit
      */
     void setPosX(const float& posX);
+
+    int getWidth();
+
+    int getHeight();
 };
 
 #endif

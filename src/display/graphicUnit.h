@@ -40,11 +40,7 @@ class GraphicUnit : public MouseElement {
 		bool loaded;
 		int x;
 		int y;
-		int width;
-		int height;
 		static const int NB_FRAMES = 8;
-		static const int WIDTH = 90;
-		static const int HEIGHT = 140;
 		Directions lastDirection;
 		// ----- Function(s)
 		Directions chooseFrame();
