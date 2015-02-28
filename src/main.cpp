@@ -37,7 +37,7 @@ void gameLoop(Window w) {
 	MovementCommand mc(&p);
 	ih.bind(MOVE, &mc);
 	
-	Sound s("sound/beat.wav", EFFECT);
+	Sound s("sound/music.wav");
 	s.play();
 
 	// Game loop
