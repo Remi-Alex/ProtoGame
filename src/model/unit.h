@@ -153,10 +153,6 @@ class Unit : public Element {
      *   @param moveY : float in [-1;1] 1 = down, -1 = up
      */
     virtual void move(const float& moveX, const float& moveY) = 0;
-
-    int getWidth();
-
-    int getHeight();
 };
 
 #endif

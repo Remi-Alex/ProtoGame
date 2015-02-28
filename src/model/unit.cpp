@@ -96,11 +96,3 @@ void Unit::attack(Unit* ennemi) {
     ennemi->HP -= damages;
     if(ennemi->HP < 0) ennemi->HP = 0;
 }
-
-int Unit::getWidth() {
-    return width;
-}
-
-int Unit::getHeight() {
-    return height;
-}
