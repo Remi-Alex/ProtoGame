@@ -27,6 +27,12 @@ class Element {
 		Element(int width, int height, float x, float y);
 
 		/**
+		 *	Handles the collision between this element and the element passed in parameter
+		 *	@return : true if they collide, false if they don't
+		 */
+		bool collides(Element e);
+		
+		/**
 		 *	@return the width of the unit
 		 */
 		int getWidth() { return width; }

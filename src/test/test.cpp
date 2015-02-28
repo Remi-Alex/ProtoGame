@@ -1,7 +1,6 @@
 #include "../lib/src/UnitTest++.h"
-#include "aClassTest.cpp"
+#include "collisionTest.cpp"
 
-int main()
-{
+int main() {
 	return UnitTest::RunAllTests();
 }
