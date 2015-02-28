@@ -19,7 +19,7 @@ void GraphicUnit::render() {
 		texture.render((int) unit->getPosX(), (int) unit->getPosY(), &currentClip );
 	} else {
 		SDL_SetRenderDrawColor(window->getGRenderer(), 0x00, 0x7C, 0x4E, 0x00);
-		SDL_Rect outlineRect = {(int) unit->getPosX(), (int) unit->getPosY(), width, height};
+		SDL_Rect outlineRect = {(int) unit->getPosX(), (int) unit->getPosY(), unit->getWidth(), unit->getHeight()};
 		SDL_RenderDrawRect(window->getGRenderer(), &outlineRect);
 	}
 	x = unit->getPosX();
