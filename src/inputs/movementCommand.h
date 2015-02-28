@@ -10,7 +10,7 @@
 #include "command.h"
 #include <math.h>
 
-#define SPEED 3
+#define SPEED 2
 #define X 0
 #define Y 1
 

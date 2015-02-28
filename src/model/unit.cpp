@@ -97,18 +97,18 @@ void Unit::attack(Unit* ennemi) {
     if(ennemi->HP < 0) ennemi->HP = 0;
 }
 
-int Unit::getPosX() {
+float Unit::getPosX() {
     return posX;
 }
 
-int Unit::getPosY() {
+float Unit::getPosY() {
     return posY;
 }
 
-void Unit::setPosY(const int& posY) {
+void Unit::setPosY(const float& posY) {
     this->posY = posY;
 }
 
-void Unit::setPosX(const int& posX) {
+void Unit::setPosX(const float& posX) {
     this->posX = posX;
 }

@@ -24,8 +24,8 @@ class Unit {
     // ----- Function(s)
     protected :
     // ----- Member(s)
-    int posX;
-    int posY;
+    float posX;
+    float posY;
 
     int width;
     int height;
@@ -159,22 +159,22 @@ class Unit {
     /**
      *  @return the posX of the unit
      */
-    int getPosX();
+    float getPosX();
 
     /**
      *  @return the posY of the unit
      */
-    int getPosY();
+    float getPosY();
 
     /**
      *  @param posY the new posY of the unit
      */
-    void setPosY(const int& posY);
+    void setPosY(const float& posY);
 
     /**
      *  @param posX the new posX of the unit
      */
-    void setPosX(const int& posX);
+    void setPosX(const float& posX);
 };
 
 #endif
