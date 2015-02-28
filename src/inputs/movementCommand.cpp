@@ -15,10 +15,10 @@ void MovementCommand::execute(void* direction) {
 	//-> using int instead of float
 	int newSpeed = SPEED;
 	if(dir[X] != 0 && dir[Y] != 0) {
-		newSpeed *= sqrt(2);
+		newSpeed /= sqrt(2);
 	}
 	if(dir[Y] == -1) {
-		player->setPosY(player->getPosY() - newSpeed);
+		player->setPosY(player->getPosY()  - newSpeed);
 	} else if(dir[Y] == 1) {
 		player->setPosY(player->getPosY() + newSpeed);
 	} if(dir[X] == -1) {
