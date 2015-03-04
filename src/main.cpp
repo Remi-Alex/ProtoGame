@@ -16,6 +16,7 @@
 #include "inputs/movementCommand.h"
 #include "inputs/commandTypes.h"
 #include "sound/sound.h"
+#include "model/map.h"
 
 void gameLoop(Window w) {
 	bool quit = false;
@@ -25,6 +26,8 @@ void gameLoop(Window w) {
 	Renderer* r = &Renderer::getInstance();
 
 	Player p;
+	Map map(&p);
+
 	GraphicUnit gu(&p, &w);
 	r->addUnit(&gu);
 	InputHandler::AddMouseElement(&gu);
@@ -39,11 +42,9 @@ void gameLoop(Window w) {
 	
 	Sound s("sound/music.wav");
 	s.play();
-
 	// Game loop
 	while(!quit) {
 
-		// FIXME: The square is not displayed when not beeing moved
 		SDL_RenderClear(w.getGRenderer());
 		SDL_RenderCopy(w.getGRenderer(), w.getGTexture(), NULL, NULL );
 
@@ -56,8 +57,10 @@ void gameLoop(Window w) {
 				ih.handleMouse(e);
 			}
 		}
+		
 		signed char* dir = ih.handleKeyboard();
 		//Handle collisions
+		dir = map.handleMovementCollision(dir);
 		ih.executeMovement(dir);
 
 		r->render();

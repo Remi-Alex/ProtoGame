@@ -9,10 +9,9 @@
 
 #include "command.h"
 #include <math.h>
+#include "direction.h"
 
 #define SPEED 2
-#define X 0
-#define Y 1
 
 class MovementCommand : public Command {
 	public:
