@@ -34,7 +34,12 @@ class InputHandler {
 		/**
 		 *	Handles the keyboard
 		 */
-		signed char* handleKeyboard();
+		signed char* handleMovement();
+
+		/**
+		 *	Handles the buttons for spells
+		 */
+		Command* handleSpells(const SDL_Event&);
 
 		/**
 		 *	Executes movementCommands based on a array of directions

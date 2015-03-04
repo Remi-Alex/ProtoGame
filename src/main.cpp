@@ -53,12 +53,14 @@ void gameLoop(Window w) {
 			//User requests quit
 			if(e.type == SDL_QUIT) {
 				quit = true;
+			} else if(e.type == SDL_KEYDOWN) {
+				ih.handleSpells(e);
 			} else {
 				ih.handleMouse(e);
 			}
 		}
-		
-		signed char* dir = ih.handleKeyboard();
+
+		signed char* dir = ih.handleMovement();
 		//Handle collisions
 		dir = map.handleMovementCollision(dir);
 		ih.executeMovement(dir);
