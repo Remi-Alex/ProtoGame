@@ -32,6 +32,14 @@ class GraphicUnit : public MouseElement {
 		//@Override
 		bool contain(int, int);
 
+		Directions getLastDirection(void) const;
+
+		int getX(void) const;
+		int getY(void) const;
+
+		int getWidth(void) const;
+		int getHeight(void) const;
+
 	private:
 		// ----- Member(s)
 		Unit* unit;

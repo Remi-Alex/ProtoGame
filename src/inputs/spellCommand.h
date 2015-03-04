@@ -9,12 +9,13 @@
 
 #include "command.h"
 #include "../display/graphicSpell.h"
+#include "../display/graphicUnit.h"
 
 class SpellCommand : public Command {
 	public:
 		// ----- Member(s)
 		// ----- Function(s)
-		SpellCommand(GraphicSpell*);
+		SpellCommand(GraphicSpell*, GraphicUnit*);
 
 		~SpellCommand() {}
 
@@ -22,6 +23,7 @@ class SpellCommand : public Command {
 	protected:
 	private:
 		GraphicSpell* graphicSpell;
+		GraphicUnit* player;
 };
 
 #endif

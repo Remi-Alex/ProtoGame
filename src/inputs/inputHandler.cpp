@@ -6,7 +6,6 @@
 
 #include "inputHandler.h"
 #include <stdlib.h>
-#include <iostream>
 
 /** static members **/
 std::vector<MouseElement*> InputHandler::mouseElements;

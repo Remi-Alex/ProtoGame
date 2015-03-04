@@ -9,16 +9,19 @@
 
 #include "../model/spell.h"
 #include "window.h"
+#include "../util/directions.h"
 
 class GraphicSpell {
 	public:
 		// ----- Member(s)
 		// ----- Function(s)
-		GraphicSpell(Spell*, Window*, const float&, const float&);
+		GraphicSpell(Spell*, Window*, const float&, const float&, Directions);
 
 		GraphicSpell(GraphicSpell*);
 
 		~GraphicSpell() {}
+
+		void setCoordinates(const float&, const float&, Directions);
 
 		void render();
 	protected:
@@ -26,6 +29,7 @@ class GraphicSpell {
 		Spell* spell;
 		Window* window;
 		float x, y;
+		Directions direction;
 };
 
 #endif

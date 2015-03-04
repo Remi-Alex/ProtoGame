@@ -20,6 +20,7 @@
 #include "inputs/spellCommand.h"
 #include "sound/sound.h"
 #include "model/map.h"
+#include "util/directions.h"
 
 void gameLoop(Window w) {
 	bool quit = false;
@@ -44,8 +45,8 @@ void gameLoop(Window w) {
 	ih.bind(MOVE, &mc);
 
 	Spell spell(10);
-	GraphicSpell gs(&spell, &w, 10, 10);
-	SpellCommand sc(&gs);
+	GraphicSpell gs(&spell, &w, 10, 10, S);
+	SpellCommand sc(&gs, &gu);
 	ih.bind(BUTTON_1, &sc);
 	
 	Sound s("sound/music.wav");

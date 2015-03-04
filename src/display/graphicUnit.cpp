@@ -68,3 +68,23 @@ bool GraphicUnit::contain(int x, int y) {
 	int posY = unit->getPosY();
 	return x >= posX && x <= posX + unit->getWidth() && y >= posY && y <= posY + unit->getHeight();
 }
+
+Directions GraphicUnit::getLastDirection() const {
+	return lastDirection;
+}
+
+int GraphicUnit::getX() const {
+	return x;
+}
+
+int GraphicUnit::getY() const {
+	return y;
+}
+
+int GraphicUnit::getWidth() const {
+	return unit->getWidth();
+}
+
+int GraphicUnit::getHeight() const {
+	return unit->getHeight();
+}
