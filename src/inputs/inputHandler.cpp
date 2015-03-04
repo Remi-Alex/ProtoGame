@@ -47,7 +47,7 @@ void InputHandler::handleMouse(const SDL_Event& e) {
 	}
 }
 
-signed char* InputHandler::handleKeyboard() {
+signed char* InputHandler::handleMovement() {
 	//Set texture based on current keystate 
 	const Uint8* currentKeyStates = SDL_GetKeyboardState( NULL ); 
 	
@@ -78,4 +78,25 @@ void InputHandler::executeMovement(signed char* dir){
 
 void InputHandler::bind(const CommandTypes& ct, Command* c) {
 	commands[ct] = c;
+}
+
+Command* InputHandler::handleSpells(const SDL_Event& e) {
+	Command* c = NULL;
+	switch(e.key.keysym.sym){
+		case SDLK_1:
+			c = commands[BUTTON_1];
+			break;
+		case SDLK_2:
+			c = commands[BUTTON_2];
+			break;
+		case SDLK_3:
+			c = commands[BUTTON_3];
+			break;
+		case SDLK_4:
+			c = commands[BUTTON_4];
+			break;
+		default:
+			break;
+	}
+	return c;
 }
