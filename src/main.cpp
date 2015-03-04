@@ -5,16 +5,19 @@
 //  Copyright (c) 2015 Remi&Alex. All rights reserved.
 
 #include <stdio.h>
+#include <iostream>
 #include <string>
 #include "display/window.h"
 #include "display/renderer.h"
 #include "display/graphicUnit.h"
 #include "display/text.h"
 #include "display/textManager.h"
+#include "display/graphicSpell.h"
 #include "model/player.h"
 #include "inputs/inputHandler.h"
 #include "inputs/movementCommand.h"
 #include "inputs/commandTypes.h"
+#include "inputs/spellCommand.h"
 #include "sound/sound.h"
 
 void gameLoop(Window w) {
@@ -36,6 +39,11 @@ void gameLoop(Window w) {
 
 	MovementCommand mc(&p);
 	ih.bind(MOVE, &mc);
+
+	Spell spell(10);
+	GraphicSpell gs(&spell, &w, 10, 10);
+	SpellCommand sc(&gs);
+	ih.bind(BUTTON_1, &sc);
 	
 	Sound s("sound/music.wav");
 	s.play();

@@ -12,11 +12,14 @@ class Spell {
 	public:
 		// ----- Member(s)
 		// ----- Function(s)
-		Spell();
+		Spell(const int&);
 
 		~Spell() {}
+
+		int getDuration() const;
 	protected:
 	private:
+		int duration; //seconds
 };
 
 #endif

@@ -6,4 +6,8 @@
 
 #include "spell.h"
 
-Spell::Spell() {}
+Spell::Spell(const int& d) : duration(d) {}
+
+int Spell::getDuration() const {
+	return duration;
+}

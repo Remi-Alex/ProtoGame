@@ -14,9 +14,20 @@ void Renderer::render() {
 		(*it)->render();
 		++it;
 	}
+
+	std::list<GraphicSpell*>::iterator itS = spells.begin();
+	while(itS != spells.end()) {
+		(*itS)->render();
+		++itS;
+	}
 }
 
 bool Renderer::addUnit(GraphicUnit* u) {
 	units.push_front(u);
+	return true;
+}
+
+bool Renderer::addSpell(GraphicSpell* gs) {
+	spells.push_front(gs);
 	return true;
 }

@@ -9,6 +9,7 @@
 
 #include "window.h"
 #include "graphicUnit.h"
+#include "graphicSpell.h"
 #include <list>
 
 class Renderer {
@@ -41,12 +42,15 @@ class Renderer {
 		 *	@param c the unit to remove
 		 *	@return true if it as been correctly removed from the list
 		 */
-		bool removeUnit(GraphicUnit*); 
+		bool removeUnit(GraphicUnit*);
+
+		bool addSpell(GraphicSpell*);
 
 	private:
 		// ----- Member(s)
 		// TODO: Change for GaphicalUnit
 		std::list<GraphicUnit*> units;
+		std::list<GraphicSpell*> spells;
 		// ----- Function(s)
 		Renderer();
 		Renderer(Renderer const&) {}

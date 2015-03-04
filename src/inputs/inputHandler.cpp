@@ -83,20 +83,22 @@ void InputHandler::bind(const CommandTypes& ct, Command* c) {
 Command* InputHandler::handleSpells(const SDL_Event& e) {
 	Command* c = NULL;
 	switch(e.key.keysym.sym){
-		case SDLK_1:
+		case SDLK_a:
 			c = commands[BUTTON_1];
 			break;
-		case SDLK_2:
+		case SDLK_z:
 			c = commands[BUTTON_2];
 			break;
-		case SDLK_3:
+		case SDLK_e:
 			c = commands[BUTTON_3];
 			break;
-		case SDLK_4:
+		case SDLK_r:
 			c = commands[BUTTON_4];
 			break;
 		default:
 			break;
 	}
+	if(c != NULL)
+		c->execute(NULL);
 	return c;
 }

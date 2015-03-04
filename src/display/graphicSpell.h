@@ -8,17 +8,24 @@
 #define graphic_spell_h
 
 #include "../model/spell.h"
+#include "window.h"
 
 class GraphicSpell {
 	public:
 		// ----- Member(s)
 		// ----- Function(s)
-		GraphicSpell(Spell* s);
+		GraphicSpell(Spell*, Window*, const float&, const float&);
+
+		GraphicSpell(GraphicSpell*);
 
 		~GraphicSpell() {}
+
+		void render();
 	protected:
 	private:
 		Spell* spell;
+		Window* window;
+		float x, y;
 };
 
 #endif
