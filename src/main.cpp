@@ -44,7 +44,7 @@ void gameLoop(Window w) {
 	MovementCommand mc(&p);
 	ih.bind(MOVE, &mc);
 
-	Spell spell(10);
+	Spell spell(100);
 	GraphicSpell gs(&spell, &w, 10, 10, S);
 	SpellCommand sc(&gs, &gu);
 	ih.bind(BUTTON_1, &sc);

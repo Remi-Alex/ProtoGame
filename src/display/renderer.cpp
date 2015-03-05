@@ -17,8 +17,12 @@ void Renderer::render() {
 
 	std::list<GraphicSpell*>::iterator itS = spells.begin();
 	while(itS != spells.end()) {
-		(*itS)->render();
-		++itS;
+		if((*itS)->getRemainingDuration() < 0) {
+			spells.erase(itS++);
+		} else {
+			(*itS)->render();
+			++itS;
+		}
 	}
 }
 

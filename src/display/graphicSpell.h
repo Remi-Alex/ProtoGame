@@ -24,6 +24,8 @@ class GraphicSpell {
 		void setCoordinates(const float&, const float&, Directions);
 
 		void render();
+
+		int getRemainingDuration() const;
 	protected:
 	private:
 		Spell* spell;
@@ -31,6 +33,7 @@ class GraphicSpell {
 		float x, y;
 		Directions direction;
 		static const int SPEED = 3;
+		int duration;
 };
 
 #endif
