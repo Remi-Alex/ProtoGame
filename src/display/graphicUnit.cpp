@@ -13,13 +13,14 @@ GraphicUnit::GraphicUnit(Unit* u, Window* w) : unit(u), window(w), texture(w), l
 
 void GraphicUnit::render() {
 	Directions frame = chooseFrame();
+	
 	if(loaded) {
 		SDL_Rect currentClip;
-		currentClip = {frame * unit->getWidth(), 0, unit->getWidth(), unit->getHeight()};
-		texture.render((int) unit->getPosX(), (int) unit->getPosY(), &currentClip );
+		currentClip = {frame * unit->getWidth(), 0, unit->getWidth(), texture.getHeight()};
+		texture.render((int) unit->getPosX(), (int) unit->getPosY()+unit->getHeight() - texture.getHeight(), &currentClip );
 	} else {
 		SDL_SetRenderDrawColor(window->getGRenderer(), 0x00, 0x7C, 0x4E, 0x00);
-		SDL_Rect outlineRect = {(int) unit->getPosX(), (int) unit->getPosY(), unit->getWidth(), unit->getHeight()};
+		SDL_Rect outlineRect = {(int) unit->getPosX(), (int) unit->getPosY(), SIZE_RECT_ERROR, SIZE_RECT_ERROR};
 		SDL_RenderDrawRect(window->getGRenderer(), &outlineRect);
 	}
 	x = unit->getPosX();

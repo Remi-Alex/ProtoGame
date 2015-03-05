@@ -8,7 +8,7 @@
 #include "player.h"
 #include <iostream>
 
-Player::Player() : Unit() {
+Player::Player() : Unit(WIDTH, WIDTH) {
 
 }
 

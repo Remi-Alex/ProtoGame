@@ -9,13 +9,17 @@
 #include <stdlib.h>
 #include <time.h>
 
-Unit::Unit() : Element(WIDTH, HEIGHT, 0, 0), strength(1), stamina(1), will(1), intelligence(1), luck(1), dexterity(1), lifeSteal(0), penetration(0), lifeRegen(0) {
+Unit::Unit() : Element(0, 0, 0, 0), strength(1), stamina(1), will(1), intelligence(1), luck(1), dexterity(1), lifeSteal(0), penetration(0), lifeRegen(0) {
     this->computeStats();
 }
 
-Unit::Unit(unsigned short& strength, unsigned short& stamina, unsigned short& will, unsigned short& intelligence, 
+Unit::Unit(int width, int height) : Element(width, height, 0, 0), strength(1), stamina(1), will(1), intelligence(1), luck(1), dexterity(1), lifeSteal(0), penetration(0), lifeRegen(0) {
+    this->computeStats();
+}
+
+Unit::Unit(int width, int height, unsigned short& strength, unsigned short& stamina, unsigned short& will, unsigned short& intelligence, 
     unsigned short& luck, unsigned short& dexterity) 
-: Element(WIDTH, HEIGHT, 0, 0), strength(strength), stamina(stamina), will(will), intelligence(intelligence), luck(luck), dexterity(dexterity), lifeSteal(0), penetration(0), lifeRegen(0) {
+: Element(width, height, 0, 0), strength(strength), stamina(stamina), will(will), intelligence(intelligence), luck(luck), dexterity(dexterity), lifeSteal(0), penetration(0), lifeRegen(0) {
     this->computeStats();
 }
 
