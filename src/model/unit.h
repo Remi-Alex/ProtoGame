@@ -25,8 +25,6 @@ class Unit : public Element {
     // ----- Function(s)
     protected :
     // ----- Member(s)
-    static const int WIDTH = 90;
-    static const int HEIGHT = 140;
 
     unsigned short strength;
     unsigned short stamina;
@@ -129,9 +127,19 @@ class Unit : public Element {
      *  Default constructor with no parameters
      */
     Unit();
+
+    /**
+     *  Constructor with only the width and the height of the unit
+     *  and default parameters
+     *  @param width        the width of the unit
+     *  @param height       the height of the unit
+     */  
+    Unit(int width, int height);
     
     /**
      *  Constructor with one parameter for each caracteristic
+     *  @param width        the width of the unit
+     *  @param height       the height of the unit
      *  @param strength     the amount of strength given to the unit
      *  @param stamina      the amount of stamina given to the unit
      *  @param will         the amount of will given to the unit
@@ -139,7 +147,7 @@ class Unit : public Element {
      *  @param luck         the amount of luck given to the unit
      *  @param dexterity    the amount of dexterity given to the unit
      */
-    Unit(unsigned short& strength, unsigned short& stamina, unsigned short& will, unsigned short& intelligence, unsigned short& luck, unsigned short& dexterity);
+    Unit(int width, int height, unsigned short& strength, unsigned short& stamina, unsigned short& will, unsigned short& intelligence, unsigned short& luck, unsigned short& dexterity);
     
     /**
      *  Used to attack the ennemi unit given in parameter

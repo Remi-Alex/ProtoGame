@@ -13,6 +13,8 @@
 #include "../inputs/mouseElement.h"
 #include "../util/directions.h"
 
+#define SIZE_RECT_ERROR 100
+
 class GraphicUnit : public MouseElement {
 	public:
 		// ----- Member(s)

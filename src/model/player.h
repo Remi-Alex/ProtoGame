@@ -17,11 +17,10 @@
 class Player : public Unit {
     private :
         // ----- Member(s)
-        
         // ----- Function(s)
-        
     protected :
         // ----- Member(s)
+        const static int WIDTH = 90;
         // ----- Function(s)
     public :
         // ----- Member(s)

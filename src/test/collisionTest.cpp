@@ -31,7 +31,7 @@ TEST(CollidesY) {
 TEST(CollidesDiagNESW) {
 	Player p1;
 	Player p2;
-	p2.setPosY(120);
+	p2.setPosY(80);
 	p2.setPosX(80);
 	CHECK(p1.collides(p2));
 	CHECK(p2.collides(p1));
@@ -41,7 +41,7 @@ TEST(CollidesDiagSENW) {
 	Player p1;
 	Player p2;
 	p1.setPosX(80);
-	p2.setPosY(130);
+	p2.setPosY(80);
 	CHECK(p1.collides(p2));
 	CHECK(p2.collides(p1));
 }
