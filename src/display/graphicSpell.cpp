@@ -13,32 +13,32 @@ GraphicSpell::GraphicSpell(GraphicSpell* gs) : spell(gs->spell), window(gs->wind
 void GraphicSpell::render() {
 	switch(direction) {
 		case N:
-			--y;
+			y-=SPEED;
 			break;
 		case NE:
-			--y;
-			++x;
+			y-=SPEED;
+			x+=SPEED;
 			break;
 		case E:
-			++x;
+			x+=SPEED;
 			break;
 		case SE:
-			++x;
-			++y;
+			x+=SPEED;
+			y+=SPEED;
 			break;
 		case S:
-			++y;
+			y+=SPEED;
 			break;
 		case SW:
-			++y;
-			--x;
+			y+=SPEED;
+			x-=SPEED;
 			break;
 		case W:
-			--x;
+			x-=SPEED;
 			break;
 		case NW:
-			--x;
-			--y;
+			x-=SPEED;
+			y-=SPEED;
 			break;
 		default:
 			break;

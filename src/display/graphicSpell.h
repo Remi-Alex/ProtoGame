@@ -30,6 +30,7 @@ class GraphicSpell {
 		Window* window;
 		float x, y;
 		Directions direction;
+		static const int SPEED = 3;
 };
 
 #endif
